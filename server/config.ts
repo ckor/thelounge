@@ -164,9 +164,11 @@ class Config {
 		if (!this.values.defaults.nick) {
 			return "thelounge";
 		}
-		if (Config.values.public && (Config.values.ldap || {}).enable) {
+
+		if (this.values.public && (this.values.ldap || {}).enable) {
 			return ldapAuth.user;
 		}
+
 		return this.values.defaults.nick.replace(/%/g, () =>
 			Math.floor(Math.random() * 10).toString()
 		);
