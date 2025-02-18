@@ -161,11 +161,11 @@ class Config {
 	}
 
 	getDefaultNick() {
+		log.warn(`test: `,JSON.stringify(ldapAuth));
 		if (!this.values.defaults.nick) {
 			return "thelounge";
 		}
 
-		log.warn(`test: `,JSON.stringify(ldapAuth));
 //		if (this.values.public && (this.values.ldap || {}).enable) {
 //			return ldapAuth.user;
 //		}
