@@ -161,7 +161,7 @@ class Config {
 	}
 
 	getDefaultNick() {
-		log.warn(`test: `,JSON.stringify(this.values.ldap));
+		log.warn(`test: `,JSON.stringify(this.values));
 		if (!this.values.defaults.nick) {
 			return "thelounge";
 		}
