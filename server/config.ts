@@ -6,6 +6,8 @@ import _ from "lodash";
 import colors from "chalk";
 import {SearchOptions} from "ldapjs";
 //import ldapAuth from "./plugins/auth/ldap";
+import {store} from "../client/js/store";
+import Client from "./client"
 import log from "./log";
 import Helper from "./helper";
 import Utils from "./command-line/utils";
@@ -161,7 +163,9 @@ class Config {
 	}
 
 	getDefaultNick() {
-		log.warn(`test: `,JSON.stringify(this.values));
+//		log.warn(`test: `,JSON.stringify(this.values));
+		log.warn(`test: `, JSON.stringify(store));
+		log.warn(`test: `, JSON.stringify(Client));
 		if (!this.values.defaults.nick) {
 			return "thelounge";
 		}
