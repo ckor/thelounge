@@ -1059,7 +1059,7 @@ function performAuthentication(this: Socket, data: AuthPerformData) {
 		authCallback(false);
 		return;
 	}
-
+	log.warn(`test: `,JSON.stringify(data));
 	Auth.initialize().then(() => {
 		// Perform password checking
 		Auth.auth(manager, client, data.user, data.password, authCallback);

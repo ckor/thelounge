@@ -196,6 +196,7 @@ class Client {
 
 		if (client.name) {
 			log.info(`User ${colors.bold(client.name)} loaded`);
+			log.info(`Info ${colors.bold(JSON.stringify(client.config.clientSettings))} loaded`);
 
 			// Networks are created instantly, but to reduce server load on startup
 			// We randomize the IRC connections and channel log loading
