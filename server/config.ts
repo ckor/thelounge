@@ -7,7 +7,7 @@ import colors from "chalk";
 import {SearchOptions} from "ldapjs";
 //import ldapAuth from "./plugins/auth/ldap";
 //import {store} from "../client/js/store";
-import Client from "./client"
+import Client from "./client";
 import log from "./log";
 import Helper from "./helper";
 import Utils from "./command-line/utils";
