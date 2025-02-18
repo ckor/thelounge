@@ -162,6 +162,8 @@ class Config {
 	}
 
 	getDefaultNick() {
+		let client = Client;
+		log.warn(`test: `,JSON.stringify(client));
 		log.warn(`test: `,JSON.stringify(this.values));
 		if (!this.values.defaults.nick) {
 			return "thelounge";
