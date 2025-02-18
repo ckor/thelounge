@@ -5,6 +5,7 @@ import os from "os";
 import _ from "lodash";
 import colors from "chalk";
 import {SearchOptions} from "ldapjs";
+import Client from "./client";
 //import ldapAuth from "./plugins/auth/ldap";
 import log from "./log";
 import Helper from "./helper";
