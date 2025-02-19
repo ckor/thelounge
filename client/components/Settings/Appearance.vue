@@ -28,7 +28,7 @@
 			</label>
 		</div>
 		<template v-if="store.state.serverConfiguration?.prefetch">
-			<h2>Link previews</h2>
+			<h2>Prévisualisation des liens</h2>
 			<div>
 				<label class="opt">
 					<input :checked="store.state.settings.media" type="checkbox" name="media" />
@@ -43,7 +43,7 @@
 			</div>
 		</template>
 		<h2 id="label-status-messages">
-			Status messages
+			Notifications
 			<span
 				class="tooltipped tooltipped-n tooltipped-no-delay"
 				aria-label="Joins, parts, quits, kicks, nick changes, and mode changes"
@@ -59,7 +59,7 @@
 					name="statusMessages"
 					value="shown"
 				/>
-				Show all status messages individually
+				Notifications individuelles
 			</label>
 			<label class="opt">
 				<input
@@ -68,7 +68,7 @@
 					name="statusMessages"
 					value="condensed"
 				/>
-				Condense status messages together
+				Notifications regroupées
 			</label>
 			<label class="opt">
 				<input
@@ -77,10 +77,10 @@
 					name="statusMessages"
 					value="hidden"
 				/>
-				Hide all status messages
+				Masquer les notifications
 			</label>
 		</div>
-		<h2>Visual Aids</h2>
+		<h2>Options cosmetiques</h2>
 		<div>
 			<label class="opt">
 				<input
@@ -88,7 +88,7 @@
 					type="checkbox"
 					name="coloredNicks"
 				/>
-				Enable colored nicknames
+				Activer les noms colorés
 			</label>
 			<label class="opt">
 				<input
@@ -96,16 +96,16 @@
 					type="checkbox"
 					name="autocomplete"
 				/>
-				Enable autocomplete
+				Activer autocompletion
 			</label>
 		</div>
 		<div>
 			<label class="opt">
 				<label for="nickPostfix" class="opt">
-					Nick autocomplete postfix
+					Autocompletion pseudo postfix
 					<span
 						class="tooltipped tooltipped-n tooltipped-no-delay"
-						aria-label="Nick autocomplete postfix (for example a comma)"
+						aria-label="Autocompletion pseudo postfix (par exemple une virgule)"
 					>
 						<button class="extra-help" />
 					</span>
@@ -116,12 +116,12 @@
 					type="text"
 					name="nickPostfix"
 					class="input"
-					placeholder="Nick autocomplete postfix (e.g. ', ')"
+					placeholder="Autocompletion pseudo postfix (e.g. ', ')"
 				/>
 			</label>
 		</div>
 
-		<h2>Theme</h2>
+		<h2>Thème</h2>
 		<div>
 			<label for="theme-select" class="sr-only">Theme</label>
 			<select
@@ -141,9 +141,9 @@
 		</div>
 
 		<div>
-			<h2>Custom Stylesheet</h2>
+			<h2>CSS Personalisé</h2>
 			<label for="user-specified-css-input" class="sr-only">
-				Custom stylesheet. You can override any style with CSS here.
+				Insérer du CSS ici.
 			</label>
 			<textarea
 				id="user-specified-css-input"

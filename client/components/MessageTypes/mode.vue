@@ -1,7 +1,7 @@
 <template>
 	<span class="content">
 		<Username :user="message.from" />
-		sets mode
+		defini le mode
 		<ParsedMessage :message="message" />
 	</span>
 </template>

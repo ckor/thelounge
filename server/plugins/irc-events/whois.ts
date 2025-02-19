@@ -44,7 +44,7 @@ export default <IrcEventHandler>function (irc, network) {
 		if (data.error) {
 			msg = new Msg({
 				type: MessageType.ERROR,
-				text: "No such nick: " + data.nick,
+				text: "Pseudo inconnu: " + data.nick,
 			});
 		} else {
 			// Absolute datetime in milliseconds since nick is idle

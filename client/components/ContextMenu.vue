@@ -147,7 +147,7 @@ export default defineComponent({
 			} else if ("link" in item && item.link) {
 				router.push(item.link).catch(() => {
 					// eslint-disable-next-line no-console
-					console.error("Failed to navigate to", item.link);
+					console.error("Echec de navigation vers", item.link);
 				});
 			}
 		};

@@ -14,25 +14,25 @@
 					@click="onPushButtonClick"
 				>
 					<template v-if="store.state.pushNotificationState === 'subscribed'">
-						Unsubscribe from push notifications
+						Désactivation des push notifications
 					</template>
 					<template v-else-if="store.state.pushNotificationState === 'loading'">
-						Loading…
+						Chargement…
 					</template>
 					<template v-else> Subscribe to push notifications </template>
 				</button>
 				<div v-if="store.state.pushNotificationState === 'nohttps'" class="error">
-					<strong>Warning</strong>: Push notifications are only supported over HTTPS
+					<strong>Attention</strong>: Les push notifications sont supportées uniquement en HTTPS
 					connections.
 				</div>
 				<div v-if="store.state.pushNotificationState === 'unsupported'" class="error">
-					<strong>Warning</strong>:
-					<span>Push notifications are not supported by your browser.</span>
+					<strong>Attention</strong>:
+					<span>Les push notifications ne sont pas gérées par votre navigateur.</span>
 				</div>
 			</div>
 		</template>
 
-		<h2>Browser Notifications</h2>
+		<h2>Notifications du navigateur</h2>
 		<div>
 			<label class="opt">
 				<input
@@ -42,16 +42,16 @@
 					type="checkbox"
 					name="desktopNotifications"
 				/>
-				Enable browser notifications<br />
+				Activer les notifications navigateur<br />
 				<div v-if="store.state.desktopNotificationState === 'unsupported'" class="error">
-					<strong>Warning</strong>: Notifications are not supported by your browser.
+					<strong>Attention</strong>: Notifications non gérées par votre navigateur.
 				</div>
 				<div
 					v-if="store.state.desktopNotificationState === 'nohttps'"
 					id="warnBlockedDesktopNotifications"
 					class="error"
 				>
-					<strong>Warning</strong>: Notifications are only supported over HTTPS
+					<strong>Attention</strong>: Les notifications sont supportées uniquement en HTTPS
 					connections.
 				</div>
 				<div
@@ -59,7 +59,7 @@
 					id="warnBlockedDesktopNotifications"
 					class="error"
 				>
-					<strong>Warning</strong>: Notifications are blocked by your browser.
+					<strong>Attention</strong>: Votre navigateur bloque les notifications.
 				</div>
 			</label>
 		</div>
@@ -70,7 +70,7 @@
 					type="checkbox"
 					name="notification"
 				/>
-				Enable notification sound
+				Activier le son des notifications
 			</label>
 		</div>
 		<div>
@@ -86,18 +86,17 @@
 					type="checkbox"
 					name="notifyAllMessages"
 				/>
-				Enable notification for all messages
+				Activier les notifications pour tous les messages
 			</label>
 		</div>
 
 		<div v-if="!store.state.serverConfiguration?.public">
 			<label class="opt">
 				<label for="highlights" class="opt">
-					Custom highlights
+					Surbrillance personalisée
 					<span
 						class="tooltipped tooltipped-n tooltipped-no-delay"
-						aria-label="If a message contains any of these comma-separated
-expressions, it will trigger a highlight."
+						aria-label="Liste de mots ou expressions séparé(e)s par des virgules qui seront mis en surbrillance."
 					>
 						<button class="extra-help" />
 					</span>
@@ -109,7 +108,7 @@ expressions, it will trigger a highlight."
 					name="highlights"
 					class="input"
 					autocomplete="off"
-					placeholder="Comma-separated, e.g.: word, some more words, anotherword"
+					placeholder="Séparé par des virgules, par exemple: Facture,Numéro de téléphone, Aide"
 				/>
 			</label>
 		</div>
@@ -117,12 +116,10 @@ expressions, it will trigger a highlight."
 		<div v-if="!store.state.serverConfiguration?.public">
 			<label class="opt">
 				<label for="highlightExceptions" class="opt">
-					Highlight exceptions
+					Exceptions de surbrillance
 					<span
 						class="tooltipped tooltipped-n tooltipped-no-delay"
-						aria-label="If a message contains any of these comma-separated
-expressions, it will not trigger a highlight even if it contains
-your nickname or expressions defined in custom highlights."
+						aria-label="Liste de mots ou expressions séparé(e)s par des virgules à exclure de la surbrillance"
 					>
 						<button class="extra-help" />
 					</span>
@@ -134,7 +131,7 @@ your nickname or expressions defined in custom highlights."
 					name="highlightExceptions"
 					class="input"
 					autocomplete="off"
-					placeholder="Comma-separated, e.g.: word, some more words, anotherword"
+					placeholder="Liste de mots ou expressions séparé(e)s par des virgules à exclure de la surbrillance"
 				/>
 			</label>
 		</div>

@@ -2,7 +2,7 @@
 	<aside
 		ref="userlist"
 		class="userlist"
-		:aria-label="'User list for ' + channel.name"
+		:aria-label="'Liste des utillisateurs sur ' + channel.name"
 		@mouseleave="removeHoverUser"
 	>
 		<div class="count">
@@ -10,7 +10,7 @@
 				ref="input"
 				:value="userSearchInput"
 				:placeholder="
-					channel.users.length + ' user' + (channel.users.length === 1 ? '' : 's')
+					channel.users.length + ' utilisateur' + (channel.users.length === 1 ? '' : 's')
 				"
 				type="search"
 				class="search"

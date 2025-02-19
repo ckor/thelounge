@@ -9,9 +9,9 @@
 			role="group"
 			aria-labelledby="label-change-password"
 		>
-			<h2 id="label-change-password">Change password</h2>
+			<h2 id="label-change-password">Changer de mot de passe</h2>
 			<div class="password-container">
-				<label for="current-password" class="sr-only"> Enter current password </label>
+				<label for="current-password" class="sr-only"> Mot de passe actuel </label>
 				<RevealPassword v-slot:default="slotProps">
 					<input
 						id="current-password"
@@ -20,12 +20,12 @@
 						:type="slotProps.isVisible ? 'text' : 'password'"
 						name="old_password"
 						class="input"
-						placeholder="Enter current password"
+						placeholder="motde passe actuel"
 					/>
 				</RevealPassword>
 			</div>
 			<div class="password-container">
-				<label for="new-password" class="sr-only"> Enter desired new password </label>
+				<label for="new-password" class="sr-only"> Nouveau mot de passe </label>
 				<RevealPassword v-slot:default="slotProps">
 					<input
 						id="new-password"
@@ -34,12 +34,12 @@
 						name="new_password"
 						autocomplete="new-password"
 						class="input"
-						placeholder="Enter desired new password"
+						placeholder="Nouveau mot de passe"
 					/>
 				</RevealPassword>
 			</div>
 			<div class="password-container">
-				<label for="new-password-verify" class="sr-only"> Repeat new password </label>
+				<label for="new-password-verify" class="sr-only"> Resaisir nouveau mot de passe </label>
 				<RevealPassword v-slot:default="slotProps">
 					<input
 						id="new-password-verify"
@@ -48,7 +48,7 @@
 						name="verify_password"
 						autocomplete="new-password"
 						class="input"
-						placeholder="Repeat new password"
+						placeholder="Resaisir nouveau mot de passe"
 					/>
 				</RevealPassword>
 			</div>
@@ -56,7 +56,7 @@
 				v-if="passwordChangeStatus && passwordChangeStatus.success"
 				class="feedback success"
 			>
-				Successfully updated your password
+				Mot de passe mis à jours avec succès
 			</div>
 			<div
 				v-else-if="passwordChangeStatus && passwordChangeStatus.error"
@@ -66,7 +66,7 @@
 			</div>
 			<div>
 				<button type="submit" class="btn" @click.prevent="changePassword">
-					Change password
+					Changer de mot de passe
 				</button>
 			</div>
 		</div>
@@ -74,11 +74,11 @@
 		<div v-if="!store.state.serverConfiguration?.public" class="session-list" role="group">
 			<h2>Sessions</h2>
 
-			<h3>Current session</h3>
+			<h3>Session actuelle</h3>
 			<Session v-if="currentSession" :session="currentSession" />
 
 			<template v-if="activeSessions.length > 0">
-				<h3>Active sessions</h3>
+				<h3>Sessions actives</h3>
 				<Session
 					v-for="session in activeSessions"
 					:key="session.token"
@@ -86,10 +86,10 @@
 				/>
 			</template>
 
-			<h3>Other sessions</h3>
+			<h3>Autres sessions</h3>
 			<p v-if="store.state.sessions.length === 0">Loading…</p>
 			<p v-else-if="otherSessions.length === 0">
-				<em>You are not currently logged in to any other device.</em>
+				<em>Vous n etes actuellement connecté à aucun autre appareil.</em>
 			</p>
 			<Session
 				v-for="session in otherSessions"
@@ -118,10 +118,10 @@ export default defineComponent({
 		const store = useStore();
 
 		const passwordErrors = {
-			missing_fields: "Please fill in all fields",
-			password_mismatch: "Both new password fields must match",
-			password_incorrect: "The current password field does not match your account password",
-			update_failed: "Failed to update your password",
+			missing_fields: "Merci de remplir tous les champs",
+			password_mismatch: "Les deux mots de passe doivent correspondre",
+			password_incorrect: "Mot de passe actuel incorrect",
+			update_failed: "Echec de la mise à jour du mot de passe",
 		};
 
 		const passwordChangeStatus = ref<{

@@ -1,8 +1,8 @@
 <template>
 	<!-- 220px is the width of the sidebar, and we add 100px to allow for the text -->
 	<aside class="settings-menu">
-		<h2>Settings</h2>
-		<ul role="navigation" aria-label="Settings tabs">
+		<h2>Paramètres</h2>
+		<ul role="navigation" aria-label="Onglets paramètres">
 			<SettingTabItem name="General" class-name="general" to="" />
 			<SettingTabItem name="Appearance" class-name="appearance" to="appearance" />
 			<SettingTabItem name="Notifications" class-name="notifications" to="notifications" />

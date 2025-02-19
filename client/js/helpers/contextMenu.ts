@@ -66,19 +66,19 @@ export function generateChannelContextMenu(
 		items = [
 			...items,
 			{
-				label: "Edit this network…",
+				label: "Modifier ce réseau",
 				type: "item",
 				class: "edit",
 				link: `/edit-network/${network.uuid}`,
 			},
 			{
-				label: "Join a channel…",
+				label: "Rejoindre un canal…",
 				type: "item",
 				class: "join",
 				action: () => (network.isJoinChannelShown = true),
 			},
 			{
-				label: "List all channels",
+				label: "Liste des canaux",
 				type: "item",
 				class: "list",
 				action: () =>
@@ -88,7 +88,7 @@ export function generateChannelContextMenu(
 					}),
 			},
 			{
-				label: "List ignored users",
+				label: "Liste des utilisateurs bloqués",
 				type: "item",
 				class: "list",
 				action: () =>
@@ -99,7 +99,7 @@ export function generateChannelContextMenu(
 			},
 			network.status.connected
 				? {
-						label: "Disconnect",
+						label: "Déconnexion",
 						type: "item",
 						class: "disconnect",
 						action: () =>
@@ -109,7 +109,7 @@ export function generateChannelContextMenu(
 							}),
 				  }
 				: {
-						label: "Connect",
+						label: "Connexion",
 						type: "item",
 						class: "connect",
 						action: () =>
@@ -124,7 +124,7 @@ export function generateChannelContextMenu(
 	// Add menu items for channels
 	if (channel.type === ChanType.CHANNEL) {
 		items.push({
-			label: "Edit topic",
+			label: "Modifier le sujet",
 			type: "item",
 			class: "edit",
 			action() {
@@ -133,7 +133,7 @@ export function generateChannelContextMenu(
 			},
 		});
 		items.push({
-			label: "List banned users",
+			label: "Liste des bannis",
 			type: "item",
 			class: "list",
 			action() {
@@ -149,7 +149,7 @@ export function generateChannelContextMenu(
 	if (channel.type === ChanType.QUERY) {
 		items.push(
 			{
-				label: "User information",
+				label: "Information sur l'utilisateur",
 				type: "item",
 				class: "action-whois",
 				action() {
@@ -161,7 +161,7 @@ export function generateChannelContextMenu(
 				},
 			},
 			{
-				label: "Ignore user",
+				label: "Bloquer",
 				type: "item",
 				class: "action-ignore",
 				action() {
@@ -176,16 +176,16 @@ export function generateChannelContextMenu(
 
 	if (channel.type === ChanType.CHANNEL || channel.type === ChanType.QUERY) {
 		items.push({
-			label: "Clear history",
+			label: "Effacer l'historique",
 			type: "item",
 			class: "clear-history",
 			action() {
 				eventbus.emit(
 					"confirm-dialog",
 					{
-						title: "Clear history",
-						text: `Are you sure you want to clear history for ${channel.name}? This cannot be undone.`,
-						button: "Clear history",
+						title: "Effacer l'historique",
+						text: `Êtes vous certain de vouloir effacer votre historique sur ${channel.name}? Cette action est irréversible.`,
+						button: "Effacer",
 					},
 					(result) => {
 						if (!result) {
@@ -267,7 +267,7 @@ export function generateInlineChannelContextMenu(
 	if (channel) {
 		return [
 			{
-				label: "Go to channel",
+				label: "Rejoindre le canal",
 				type: "item",
 				class: "chan",
 				link: `/chan-${channel.id}`,
@@ -277,7 +277,7 @@ export function generateInlineChannelContextMenu(
 
 	return [
 		{
-			label: "Join channel",
+			label: "Rejoindre le canal",
 			type: "item",
 			class: "join",
 			action: join,
@@ -319,13 +319,13 @@ export function generateUserContextMenu(
 			type: "divider",
 		},
 		{
-			label: "User information",
+			label: "Information de l'utilisateur",
 			type: "item",
 			class: "action-whois",
 			action: whois,
 		},
 		{
-			label: "Ignore user",
+			label: "Bloquer",
 			type: "item",
 			class: "action-ignore",
 			action() {
@@ -336,7 +336,7 @@ export function generateUserContextMenu(
 			},
 		},
 		{
-			label: "Direct messages",
+			label: "Message privé",
 			type: "item",
 			class: "action-query",
 			action() {
@@ -452,7 +452,7 @@ export function generateUserContextMenu(
 		// Check if the target user has no mode or a mode lower than ours.
 		if (user.modes.length === 0 || compare(currentChannelUser.modes[0], user.modes[0])) {
 			items.push({
-				label: "Kick",
+				label: "Expulser",
 				type: "item",
 				class: "action-kick",
 				action() {

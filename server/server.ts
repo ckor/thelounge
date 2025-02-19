@@ -605,6 +605,7 @@ function initializeClient(
 	// In public mode only one client can be connected,
 	// so there's no need to handle msg:preview:toggle
 	if (!Config.values.public) {
+
 		socket.on("msg:preview:toggle", (data) => {
 			if (_.isPlainObject(data)) {
 				return;
@@ -880,7 +881,7 @@ function getClientConfiguration(): SharedConfiguration | LockedSharedConfigurati
 
 		// TODO: this doesn't seem right, if the client needs this as a buffer
 		// the client ought to add it on its own
-		sasl: "",
+		sasl: "plain",
 		saslAccount: "",
 		saslPassword: "",
 	};
@@ -957,7 +958,24 @@ function performAuthentication(this: Socket, data: AuthPerformData) {
 		// Configuration does not change during runtime of TL,
 		// and the client listens to this event only once
 		if (data && (!("hasConfig" in data) || !data.hasConfig)) {
-			socket.emit("configuration", getClientConfiguration());
+			let cfg = getClientConfiguration();
+			if (!Config.values.public) {
+//				Config.values.defaults.name = client.name;
+				cfg.defaults.nick = client.name;
+				cfg.defaults.username = client.name;
+				cfg.defaults.realname = client.name;
+//				cfg.lockNetwork
+//				cfg.defaults.sasl = '1';
+//				cfg.defaults.saslAccount = client.name;
+				log.info(`${colors.bold("======================================================")}`);
+				log.info(`client.name ${colors.bold(client.name)}`);
+				log.info(`${colors.bold("======================================================")}`);
+				log.info(`Config.values ${colors.bold(JSON.stringify(Config.values.defaults.name))}`);
+				log.info(`${colors.bold("======================================================")}`);
+				log.info(`${colors.bold(JSON.stringify(cfg.defaults.nick))}`);
+				log.info(`${colors.bold("======================================================")}`);
+			}
+			socket.emit("configuration", cfg);
 
 			socket.emit(
 				"push:issubscribed",

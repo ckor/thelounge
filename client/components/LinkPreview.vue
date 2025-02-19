@@ -100,16 +100,16 @@
 			</template>
 			<template v-else-if="link.type === 'error'">
 				<em v-if="link.error === 'image-too-big'">
-					This image is larger than {{ imageMaxSize }} and cannot be previewed.
-					<a :href="link.link" target="_blank" rel="noopener">Click here</a>
-					to open it in a new window.
+					Cette image est plus volumineuse que {{ imageMaxSize }} et ne peut être prévisualisée.
+					<a :href="link.link" target="_blank" rel="noopener">Cliquez ici</a>
+					pour l'ouvrir dans une nouvelle fenêtre.
 				</em>
 				<template v-else-if="link.error === 'message'">
 					<div>
 						<em>
-							A preview could not be loaded.
-							<a :href="link.link" target="_blank" rel="noopener">Click here</a>
-							to open it in a new window.
+							Impossible de prévisualiser.
+							<a :href="link.link" target="_blank" rel="noopener">Cliquez ici</a>
+							pour l'ouvrir dans une nouvelle fenêtre.
 						</em>
 						<br />
 						<pre class="prefetch-error">{{ link.message }}</pre>
@@ -183,7 +183,7 @@ export default defineComponent({
 		const container = ref<HTMLDivElement | null>(null);
 
 		const moreButtonLabel = computed(() => {
-			return isContentShown.value ? "Less" : "More";
+			return isContentShown.value ? "Moins" : "Plus";
 		});
 
 		const imageMaxSize = computed(() => {
@@ -203,7 +203,7 @@ export default defineComponent({
 				showMoreButton.value = content.value.offsetWidth >= container.value.offsetWidth;
 			}).catch((e) => {
 				// eslint-disable-next-line no-console
-				console.error("Error in LinkPreview.handleResize", e);
+				console.error("Erreur dans LinkPreview.handleResize", e);
 			});
 		};
 

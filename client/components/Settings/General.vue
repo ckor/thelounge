@@ -1,14 +1,14 @@
 <template>
 	<div>
 		<div v-if="canRegisterProtocol || hasInstallPromptEvent">
-			<h2>Native app</h2>
+			<h2>Application native</h2>
 			<button
 				v-if="hasInstallPromptEvent"
 				type="button"
 				class="btn"
 				@click.prevent="nativeInstallPrompt"
 			>
-				Add The Lounge to Home screen
+				Ajouter thelounge au bureau
 			</button>
 			<button
 				v-if="canRegisterProtocol"
@@ -16,11 +16,11 @@
 				class="btn"
 				@click.prevent="registerProtocol"
 			>
-				Open irc:// URLs with The Lounge
+				Ouvrir irc:// URLs with The Lounge
 			</button>
 		</div>
 		<div v-if="store.state.serverConfiguration?.fileUpload">
-			<h2>File uploads</h2>
+			<h2>Uploads</h2>
 			<div>
 				<label class="opt">
 					<input
@@ -28,11 +28,10 @@
 						type="checkbox"
 						name="uploadCanvas"
 					/>
-					Attempt to remove metadata from images before uploading
+					Tentative de suppression des métadonnées avant upload.
 					<span
 						class="tooltipped tooltipped-n tooltipped-no-delay"
-						aria-label="This option renders the image into a canvas element to remove metadata from the image.
-	This may break orientation if your browser does not support that."
+						aria-label="Non supporté par tous les navigateurs"
 					>
 						<button class="extra-help" />
 					</span>
@@ -40,39 +39,38 @@
 			</div>
 		</div>
 		<div v-if="!store.state.serverConfiguration?.public">
-			<h2>Settings synchronisation</h2>
+			<h2>Synchronisation des paramètres</h2>
 			<label class="opt">
 				<input
 					:checked="store.state.settings.syncSettings"
 					type="checkbox"
 					name="syncSettings"
 				/>
-				Synchronize settings with other clients
+				Synchronisation des paramètres avec les autres clients
 			</label>
 			<template v-if="!store.state.settings.syncSettings">
 				<div v-if="store.state.serverHasSettings" class="settings-sync-panel">
 					<p>
-						<strong>Warning:</strong> Checking this box will override the settings of
-						this client with those stored on the server.
+						<strong>Attention:</strong> Cette case ecrasera les paramètres locaux par ceux sur le serveur.
 					</p>
 					<p>
-						Use the button below to enable synchronization, and override any settings
-						already synced to the server.
+						Utilisez le bouton ci-dessous pour activer la synchronisation et appliquer les paramètres.
+						Synchronisé.
 					</p>
 					<button type="button" class="btn btn-small" @click="onForceSyncClick">
-						Sync settings and enable
+						Synchroniser et appliquer
 					</button>
 				</div>
 				<div v-else class="settings-sync-panel">
 					<p>
-						<strong>Warning:</strong> No settings have been synced before. Enabling this
-						will sync all settings of this client as the base for other clients.
+						<strong>Attention:</strong> Aucun paramètre synchronisé au préalabe,
+						cela synchronisera tous les paramètres du client avec ceux de base..
 					</p>
 				</div>
 			</template>
 		</div>
 		<div v-if="!store.state.serverConfiguration?.public">
-			<h2>Automatic away message</h2>
+			<h2>Message d absence automatique</h2>
 
 			<label class="opt">
 				<label for="awayMessage" class="sr-only">Automatic away message</label>
@@ -82,7 +80,7 @@
 					type="text"
 					name="awayMessage"
 					class="input"
-					placeholder="Away message if The Lounge is not open"
+					placeholder="Message d'absence"
 				/>
 			</label>
 		</div>

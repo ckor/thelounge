@@ -35,10 +35,10 @@ export default <IrcEventHandler>function (irc, network) {
 	});
 
 	irc.on("nick in use", function (data) {
-		let message = data.nick + ": " + (data.reason || "Nickname is already in use.");
+		let message = data.nick + ": " + (data.reason || "Pseudo déjà utilisé.");
 
 		if (irc.connection.registered === false && !Config.values.public) {
-			message += " An attempt to use it will be made when this nick quits.";
+			message += " Une tentative sera faite lorsque cet utilisateur se déconnectera.";
 
 			// Clients usually get nick in use on connect when reconnecting to a network
 			// after a network failure (like ping timeout), and as a result of that,
@@ -77,7 +77,7 @@ export default <IrcEventHandler>function (irc, network) {
 		const lobby = network.getLobby();
 		const msg = new Msg({
 			type: MessageType.ERROR,
-			text: data.nick + ": " + (data.reason || "Nickname is invalid."),
+			text: data.nick + ": " + (data.reason || "Pseudo invalide."),
 			showInActive: true,
 		});
 		lobby.pushMessage(client, msg, true);

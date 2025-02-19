@@ -41,7 +41,7 @@ export default <IrcEventHandler>function (irc, network) {
 			const msg = new Msg({
 				time: new Date(),
 				type: MessageType.ERROR,
-				text: `${name} is empty`,
+				text: `${name} est vide`,
 			});
 			let chan = network.getChannel(channel);
 

@@ -4,13 +4,13 @@
 			<SidebarToggle />
 		</div>
 		<div class="container">
-			<router-link id="back-to-help" to="/help">« Help</router-link>
+			<router-link id="back-to-help" to="/help">« Aide</router-link>
 
 			<template
 				v-if="store.state.versionData?.current && store.state.versionData?.current.version"
 			>
 				<h1 class="title">
-					Release notes for {{ store.state.versionData.current.version }}
+					Notes de version pour {{ store.state.versionData.current.version }}
 				</h1>
 
 				<template v-if="store.state.versionData.current.changelog">
@@ -22,19 +22,19 @@
 					></div>
 				</template>
 				<template v-else>
-					<p>Unable to retrieve changelog for current release from GitHub.</p>
+					<p>Impossible de récupérer les notes de version pour la version actuel depuis GitHub.</p>
 					<p>
 						<a
 							v-if="store.state.serverConfiguration?.version"
 							:href="`https://github.com/thelounge/thelounge/releases/tag/v${store.state.serverConfiguration?.version}`"
 							target="_blank"
 							rel="noopener"
-							>View release notes for this version on GitHub</a
+							>Voir les notes de version sur GitHub</a
 						>
 					</p>
 				</template>
 			</template>
-			<p v-else>Loading changelog…</p>
+			<p v-else>Chargement du changelog…</p>
 		</div>
 	</div>
 </template>

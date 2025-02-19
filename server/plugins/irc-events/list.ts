@@ -11,7 +11,7 @@ export default <IrcEventHandler>function (irc, network) {
 		network.chanCache = [];
 
 		updateListStatus({
-			text: "Loading channel list, this can take a moment...",
+			text: "Chargement de la liste des canaux, cela peut prendre un moment...",
 		});
 	});
 
@@ -19,7 +19,7 @@ export default <IrcEventHandler>function (irc, network) {
 		Array.prototype.push.apply(network.chanCache, channels);
 
 		updateListStatus({
-			text: `Loaded ${network.chanCache.length} channels...`,
+			text: `Chargé: ${network.chanCache.length} canaux...`,
 		});
 	});
 

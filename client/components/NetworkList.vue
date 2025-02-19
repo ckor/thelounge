@@ -3,19 +3,19 @@
 		v-if="store.state.networks.length === 0"
 		class="empty"
 		role="navigation"
-		aria-label="Network and Channel list"
+		aria-label="Liste des réseaux et canaux"
 	>
-		You are not connected to any networks yet.
+		Vous n'êtes connecté à aucun réseau pour le moment.
 	</div>
-	<div v-else ref="networklist" role="navigation" aria-label="Network and Channel list">
+	<div v-else ref="networklist" role="navigation" aria-label="Liste des réseaux et canaux">
 		<div class="jump-to-input">
 			<input
 				ref="searchInput"
 				:value="searchText"
-				placeholder="Jump to..."
+				placeholder="Se rendre à..."
 				type="search"
 				class="search input mousetrap"
-				aria-label="Search among the channel list"
+				aria-label="Chercher dans la liste des canaux"
 				tabindex="-1"
 				@input="setSearchText"
 				@keydown.up="navigateResults($event, -1)"
@@ -51,7 +51,7 @@
 					/>
 				</div>
 			</div>
-			<div v-else class="no-results">No results found.</div>
+			<div v-else class="no-results">Ancun résultat.</div>
 		</div>
 		<Draggable
 			v-else

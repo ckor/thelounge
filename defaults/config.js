@@ -1,8 +1,6 @@
 "use strict";
-
 module.exports = {
 	// ## Server settings
-
 	// ### `public`
 	//
 	// When set to `true`, The Lounge starts in public mode. When set to `false`,
@@ -17,7 +15,6 @@ module.exports = {
 	//
 	// This value is set to `false` by default.
 	public: false,
-
 	// ### `host`
 	//
 	// IP address or hostname for the web server to listen to. For example, set it
@@ -26,15 +23,13 @@ module.exports = {
 	// For UNIX domain sockets, use `"unix:/absolute/path/to/file.sock"`.
 	//
 	// This value is set to `undefined` by default to listen on all interfaces.
-	host: undefined,
-
+	//host: 0.0.0.0,
 	// ### `port`
 	//
 	// Set the port to listen to.
 	//
 	// This value is set to `9000` by default.
 	port: 9000,
-
 	// ### `bind`
 	//
 	// Set the local IP to bind to for outgoing connections.
@@ -42,7 +37,6 @@ module.exports = {
 	// This value is set to `undefined` by default to let the operating system
 	// pick its preferred one.
 	bind: undefined,
-
 	// ### `reverseProxy`
 	//
 	// When set to `true`, The Lounge is marked as served behind a reverse proxy
@@ -50,7 +44,6 @@ module.exports = {
 	//
 	// This value is set to `false` by default.
 	reverseProxy: false,
-
 	// ### `maxHistory`
 	//
 	// Defines the maximum number of history lines that will be kept in memory per
@@ -58,8 +51,7 @@ module.exports = {
 	// this to `-1` will keep unlimited amount.
 	//
 	// This value is set to `10000` by default.
-	maxHistory: 10000,
-
+	maxHistory: -1,
 	// ### `https`
 	//
 	// These settings are used to run The Lounge's web server using encrypted TLS.
@@ -83,9 +75,7 @@ module.exports = {
 		certificate: "",
 		ca: "",
 	},
-
 	// ## Client settings
-
 	// ### `theme`
 	//
 	// Set the default theme to serve to new users. They will be able to select a
@@ -101,15 +91,13 @@ module.exports = {
 	//
 	// This value is set to `"default"` by default.
 	theme: "default",
-
 	// ### `prefetch`
 	//
 	// When set to `true`, The Lounge will load thumbnails and site descriptions
 	// from URLs posted in channels and private messages.
 	//
 	// This value is set to `false` by default.
-	prefetch: false,
-
+	prefetch: true,
 	// ### `disableMediaPreview`
 	//
 	// When set to `true`, The Lounge will not preview media (images, video and
@@ -121,9 +109,7 @@ module.exports = {
 	//
 	// This value is set to `false` by default.
 	disableMediaPreview: false,
-
 	// ### `prefetchStorage`
-
 	// When set to `true`, The Lounge will store and proxy prefetched images and
 	// thumbnails on the filesystem rather than directly display the content at
 	// the original URLs.
@@ -140,16 +126,14 @@ module.exports = {
 	// restarts.
 	//
 	// This value is set to `false` by default.
-	prefetchStorage: false,
-
+	prefetchStorage: true,
 	// ### `prefetchMaxImageSize`
 	//
 	// When `prefetch` is enabled, images will only be displayed if their file
 	// size does not exceed this limit.
 	//
 	// This value is set to `2048` kilobytes by default.
-	prefetchMaxImageSize: 2048,
-
+	prefetchMaxImageSize: 512000,
 	// ### prefetchMaxSearchSize
 	//
 	// This value sets the maximum response size allowed when finding the Open
@@ -158,8 +142,7 @@ module.exports = {
 	// kilobytes.
 	//
 	// This value is set to `50` kilobytes by default.
-	prefetchMaxSearchSize: 50,
-
+	prefetchMaxSearchSize: 512000,
 	// ### `prefetchTimeout`
 	//
 	// When `prefetch` is enabled, this value sets the number of milliseconds
@@ -173,7 +156,6 @@ module.exports = {
 	//
 	// This value is set to `5000` milliseconds by default.
 	prefetchTimeout: 5000,
-
 	// ### `fileUpload`
 	//
 	// Allow uploading files to the server hosting The Lounge.
@@ -197,18 +179,16 @@ module.exports = {
 	//   to correctly proxy the uploads URLs back to The Lounge.
 	//   This value is set to `null` by default.
 	fileUpload: {
-		enable: false,
-		maxFileSize: 10240,
+		enable: true,
+		maxFileSize: 51200,
 		baseUrl: null,
 	},
-
 	// ### `transports`
 	//
 	// Set `socket.io` transports.
 	//
 	// This value is set to `["polling", "websocket"]` by default.
 	transports: ["polling", "websocket"],
-
 	// ### `leaveMessage`
 	//
 	// Set users' default `quit` and `part` messages if they are not providing
@@ -216,10 +196,8 @@ module.exports = {
 	//
 	// This value is set to `"The Lounge - https://thelounge.chat"` by
 	// default.
-	leaveMessage: "The Lounge - https://thelounge.chat",
-
+	leaveMessage: "À bientôt !",
 	// ## Default network
-
 	// ### `defaults`
 	//
 	// Specifies default network information that will be used as placeholder
@@ -262,20 +240,43 @@ module.exports = {
 	//   join: "#thelounge"
 	// }
 	// ```
+	//defaults: {
+	//    name: "Libera.Chat",
+	//    host: "irc.libera.chat",
+	//    port: 6697,
+	//    password: "",
+	//    tls: true,
+	//    rejectUnauthorized: true,
+	//    nick: "thelounge%%",
+	//    username: "thelounge",
+	//    realname: "",
+	//    join: "#thelounge",
+	//    leaveMessage: "",
+	//},
+	//    defaults: {
+	//        name: "msg.logea.lan",
+	//        host: "thelounge-server",
+	//        port: 6667,
+	//        password: "",
+	//        tls: false,
+	//        rejectUnauthorized: true,
+	//        nick: "logea-invite%%",
+	//        username: "",
+	//        realname: "",
+	//        join: "#logea"
+	//      },
 	defaults: {
-		name: "Libera.Chat",
-		host: "irc.libera.chat",
-		port: 6697,
-		password: "",
-		tls: true,
+		name: "LOGEA",
+		host: "192.168.90.245",
+		port: 6667,
+		password: "LOGEA",
+		tls: false,
 		rejectUnauthorized: true,
-		nick: "thelounge%%",
-		username: "thelounge",
+		nick: "",
+		username: "",
 		realname: "",
-		join: "#thelounge",
-		leaveMessage: "",
+		join: "#logea"
 	},
-
 	// ### `lockNetwork`
 	//
 	// When set to `true`, users will not be able to modify host, port and TLS
@@ -283,15 +284,11 @@ module.exports = {
 	// These fields will also be hidden from the UI.
 	//
 	// This value is set to `false` by default.
-	lockNetwork: false,
-
+	lockNetwork: true,
 	// ## User management
-
 	// ### `messageStorage`
-
 	// The Lounge can log user messages, for example to access them later or to
 	// reload messages on server restart.
-
 	// Set this array with one or multiple values to enable logging:
 	// - `text`: Messages per network and channel will be stored as text files.
 	//   **Messages will not be reloaded on restart.**
@@ -303,12 +300,9 @@ module.exports = {
 	//
 	// This value is set to `["sqlite", "text"]` by default.
 	messageStorage: ["sqlite", "text"],
-
 	// ### `storagePolicy`
-
 	// When the sqlite storage is in use, control the maximum storage duration.
 	// A background task will periodically clean up messages older than the limit.
-
 	// The available keys for the `storagePolicy` object are:
 	//
 	// - `enabled`: If this is false, the cleaning task is not running.
@@ -323,7 +317,6 @@ module.exports = {
 		maxAgeDays: 7,
 		deletionPolicy: "statusOnly",
 	},
-
 	// ### `useHexIp`
 	//
 	// When set to `true`, users' IP addresses will be encoded as hex.
@@ -334,7 +327,6 @@ module.exports = {
 	//
 	// This value is set to `false` by default.
 	useHexIp: false,
-
 	// ## WEBIRC support
 	//
 	// When enabled, The Lounge will pass the connecting user's host and IP to the
@@ -371,9 +363,14 @@ module.exports = {
 	//
 	// This value is set to `null` to disable WEBIRC by default.
 	webirc: null,
-
+	//webirc: {
+	//     "192.168.90.245:6667": (webircObj, network) => {
+	//       webircObj.password = "";
+	//       webircObj.hostname = `webirc/${webircObj.hostname}`;
+	//       return webircObj;
+	//     },
+	//   },
 	// ## identd and oidentd support
-
 	// ### `identd`
 	//
 	// Run The Lounge with `identd` support.
@@ -390,7 +387,6 @@ module.exports = {
 		enable: false,
 		port: 113,
 	},
-
 	// ### `oidentd`
 	//
 	// When this setting is a string, this enables `oidentd` support using the
@@ -398,14 +394,11 @@ module.exports = {
 	//
 	// This is set to `null` by default to disable `oidentd` support.
 	oidentd: null,
-
 	// ## LDAP support
-
 	// These settings enable and configure LDAP authentication.
 	//
 	// They are only being used in private mode. To know more about private mode,
 	// see the `public` setting above.
-
 	//
 	// The authentication process works as follows:
 	//
@@ -437,12 +430,10 @@ module.exports = {
 	ldap: {
 		// - `enable`: when set to `false`, LDAP support is disabled and all other
 		//   values are ignored.
-		enable: false,
-
+		enable: true,
 		// - `url`: A url of the form `ldaps://<ip>:<port>`.
 		//   For plain connections, use the `ldap` scheme.
-		url: "ldaps://example.com",
-
+		url: "ldap://192.168.90.16",
 		// - `tlsOptions`: LDAP connection TLS options (only used if scheme is
 		//   `ldaps://`). It is an object whose values are Node.js' `tls.connect()`
 		//   options. It is set to `{}` by default.
@@ -454,14 +445,12 @@ module.exports = {
 		//   }
 		//   ```
 		tlsOptions: {},
-
 		// - `primaryKey`: LDAP primary key. It is set to `"uid"` by default.
-		primaryKey: "uid",
-
+		primaryKey: "sAMAccountName",
+		//baseDN: "OU=Users,DC=logea,DC=lan"
 		// - `baseDN`: LDAP base DN, alternative to `searchDN`. For example, set it
 		//   to `"ou=accounts,dc=example,dc=com"`.
 		//   When unset, the LDAP auth logic with use `searchDN` instead to locate users.
-
 		// - `searchDN`: LDAP search DN settings. This defines the procedure by
 		//   which The Lounge first looks for the user DN before authenticating them.
 		//   It is ignored if `baseDN` is specified. It is an object with the
@@ -472,26 +461,21 @@ module.exports = {
 			//     read-only to the DNs of the people that are allowed to log in.
 			//     It is set to `"cn=thelounge,ou=system-users,dc=example,dc=com"` by
 			//     default.
-			rootDN: "cn=thelounge,ou=system-users,dc=example,dc=com",
-
+			rootDN: "_service_thelounge@logea.lan",
 			//   - `rootPassword`: Password of The Lounge LDAP system user.
-			rootPassword: "1234",
-
+			rootPassword: "Aleval33!",
 			//   - `filter`: it is set to `"(&(objectClass=person)(memberOf=ou=accounts,dc=example,dc=com))"`
 			//     by default.
-			filter: "(&(objectClass=person)(memberOf=ou=accounts,dc=example,dc=com))",
-
+			//filter: "(&(objectCategory=person)(objectClass=user)(givenName=*)(sn=*))",
+			filter: "(&(objectClass=user)(!(objectClass=computer)))",
 			//   - `base`: LDAP search base (search only within this node). It is set
 			//     to `"dc=example,dc=com"` by default.
-			base: "dc=example,dc=com",
-
+			base: "dc=logea,dc=lan",
 			//   - `scope`: LDAP search scope. It is set to `"sub"` by default.
 			scope: "sub",
 		},
 	},
-
 	// ## Debugging settings
-
 	// The `debug` object contains several settings to enable debugging in The
 	// Lounge. Use them to learn more about an issue you are noticing but be aware
 	// this may produce more logging or may affect connection performance so it is
@@ -505,7 +489,6 @@ module.exports = {
 		// [`irc-framework`](https://github.com/kiwiirc/irc-framework), the
 		// underlying IRC library for Node.js used by The Lounge.
 		ircFramework: false,
-
 		// ### `debug.raw`
 		//
 		// When set to `true`, this enables logging of raw IRC messages into each

@@ -1,8 +1,8 @@
 <template>
 	<span class="content">
-		Topic set by
+		Sujet défini par
 		<Username :user="message.from" />
-		on {{ messageTimeLocale }}
+		à {{ messageTimeLocale }}
 	</span>
 </template>
 

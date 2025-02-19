@@ -16,13 +16,13 @@
 				<div v-if="network && channel" class="header">
 					<SidebarToggle />
 					<span class="title"
-						>Searching in <span class="channel-name">{{ channel.name }}</span> for</span
+						>Recherche dans <span class="channel-name">{{ channel.name }}</span> pour</span
 					>
 					<span class="topic">{{ route.query.q }}</span>
 					<MessageSearchForm :network="network" :channel="channel" />
 					<button
 						class="close"
-						aria-label="Close search window"
+						aria-label="Fermer la fenêtre de recherce"
 						title="Close search window"
 						@click="closeSearch"
 					/>
@@ -39,8 +39,8 @@
 								class="btn"
 								@click="onShowMoreClick"
 							>
-								<span v-if="store.state.messageSearchPendingQuery">Loading…</span>
-								<span v-else>Show older messages</span>
+								<span v-if="store.state.messageSearchPendingQuery">Chargement…</span>
+								<span v-else>Afficher les messages plus ancien</span>
 							</button>
 						</div>
 
@@ -48,10 +48,10 @@
 							v-if="store.state.messageSearchPendingQuery && !offset"
 							class="search-status"
 						>
-							Searching…
+							Recherche…
 						</div>
 						<div v-else-if="!messages.length && !offset" class="search-status">
-							No results found.
+							Aucun résultat.
 						</div>
 						<div
 							class="messages"

@@ -1,12 +1,12 @@
 <template>
 	<span class="content">
 		<Username :user="message.from" />
-		has changed
+		a changé
 		<span v-if="message.new_ident"
-			>username to <b>{{ message.new_ident }}</b></span
+			>son nom en <b>{{ message.new_ident }}</b></span
 		>
 		<span v-if="message.new_host"
-			>hostname to
+			>le nom d'hote en
 			<i class="hostmask"><ParsedMessage :network="network" :text="message.new_host" /></i
 		></span>
 	</span>

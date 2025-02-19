@@ -2,8 +2,8 @@
 	<table class="ignore-list">
 		<thead>
 			<tr>
-				<th class="hostmask">Hostmask</th>
-				<th class="when">Ignored At</th>
+				<th class="hostmask">Sous réseau</th>
+				<th class="when">Bloqué à</th>
 			</tr>
 		</thead>
 		<tbody>

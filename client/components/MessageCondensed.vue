@@ -5,7 +5,7 @@
 			<span class="from" />
 			<span class="content" @click="onCollapseClick"
 				>{{ condensedText
-				}}<button class="toggle-button" aria-label="Toggle status messages"
+				}}<button class="toggle-button" aria-label="Status de messages"
 			/></span>
 		</div>
 		<Message
@@ -71,7 +71,7 @@ export default defineComponent({
 				} else {
 					if (!message.type) {
 						/* eslint-disable no-console */
-						console.log(`empty message type, this should not happen: ${message.id}`);
+						console.log(`Type de message vide, cela ne devrait pas se produire: ${message.id}`);
 						continue;
 					}
 
@@ -90,53 +90,47 @@ export default defineComponent({
 							strings.push(
 								String(obj[type]) +
 									(obj[type] > 1
-										? " users have changed hostname"
-										: " user has changed hostname")
+										? " utilisateurs ont changés de noms d'hôte"
+										: " utilisateur a changé de nom d'hôte")
 							);
 							break;
 						case "join":
 							strings.push(
 								String(obj[type]) +
-									(obj[type] > 1 ? " users have joined" : " user has joined")
+									(obj[type] > 1 ? " utilisateurs ont rejoint" : " utilisateur a rejoint")
 							);
 							break;
 						case "part":
 							strings.push(
 								String(obj[type]) +
-									(obj[type] > 1 ? " users have left" : " user has left")
+									(obj[type] > 1 ? " utilisateurs ont quitté" : " utilisateur a quitté")
 							);
 							break;
 						case "nick":
 							strings.push(
 								String(obj[type]) +
 									(obj[type] > 1
-										? " users have changed nick"
-										: " user has changed nick")
+										? " utilisateurs ont changé de pseudo"
+										: " utilisateur a changed de pseudo")
 							);
 							break;
 						case "kick":
 							strings.push(
 								String(obj[type]) +
-									(obj[type] > 1 ? " users were kicked" : " user was kicked")
+									(obj[type] > 1 ? " utilisateurs ont été expulsés" : " utilisateur a été expulsé")
 							);
 							break;
 						case "mode":
 							strings.push(
 								String(obj[type]) +
-									(obj[type] > 1 ? " modes were set" : " mode was set")
+									(obj[type] > 1 ? " modes ont été attribués" : " mode a été attribué")
 							);
 							break;
 						case "away":
-							strings.push(
-								"marked away " +
-									(obj[type] > 1 ? String(obj[type]) + " times" : "once")
-							);
+							strings.push("Marqué absent " + String(obj[type]) + " fois");
 							break;
 						case "back":
-							strings.push(
-								"marked back " +
-									(obj[type] > 1 ? String(obj[type]) + " times" : "once")
-							);
+							strings.push("Marqué de retour " + String(obj[type]) + " fois");
 							break;
 					}
 				}
@@ -146,7 +140,7 @@ export default defineComponent({
 				let text = strings.pop();
 
 				if (strings.length) {
-					text = strings.join(", ") + ", and " + text!;
+					text = strings.join(", ") + ", et " + text!;
 				}
 
 				return text;

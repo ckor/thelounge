@@ -10,7 +10,7 @@ export default <IrcEventHandler>function (irc, network) {
 
 		const lobby = network.getLobby();
 		const msg = new Msg({
-			text: "You're now known as " + data.nick,
+			text: "Vous êtes enregistré sous le pseudonyme " + data.nick,
 		});
 		lobby.pushMessage(client, msg);
 

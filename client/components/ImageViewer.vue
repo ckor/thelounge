@@ -8,18 +8,18 @@
 		@click="onClick"
 	>
 		<template v-if="link !== null">
-			<button class="close-btn" aria-label="Close"></button>
+			<button class="close-btn" aria-label="Fermer"></button>
 
 			<button
 				v-if="previousImage"
 				class="previous-image-btn"
-				aria-label="Previous image"
+				aria-label="Image précédente"
 				@click.stop="previous"
 			></button>
 			<button
 				v-if="nextImage"
 				class="next-image-btn"
-				aria-label="Next image"
+				aria-label="Image suivante"
 				@click.stop="next"
 			></button>
 

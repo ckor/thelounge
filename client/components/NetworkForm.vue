@@ -7,21 +7,21 @@
 			<h1 class="title">
 				<template v-if="defaults.uuid">
 					<input v-model="defaults.uuid" type="hidden" name="uuid" />
-					Edit {{ defaults.name }}
+					Modifier {{ defaults.name }}
 				</template>
 				<template v-else>
-					Connect
+					Connexion
 					<template
 						v-if="config?.lockNetwork && store?.state.serverConfiguration?.public"
 					>
-						to {{ defaults.name }}
+						à {{ defaults.name }}
 					</template>
 				</template>
 			</h1>
 			<template v-if="!config?.lockNetwork">
-				<h2>Network settings</h2>
-				<div class="connect-row">
-					<label for="connect:name">Name</label>
+				<h2 style="display: none;">Paramètres réseau</h2>
+				<div class="connect-row" style="display: none">
+					<label for="connect:name">Nom</label>
 					<input
 						id="connect:name"
 						v-model.trim="defaults.name"
@@ -30,15 +30,15 @@
 						maxlength="100"
 					/>
 				</div>
-				<div class="connect-row">
-					<label for="connect:host">Server</label>
+				<div class="connect-row" style="display: none">
+					<label for="connect:host">Serveur</label>
 					<div class="input-wrap">
 						<input
 							id="connect:host"
 							v-model.trim="defaults.host"
 							class="input"
 							name="host"
-							aria-label="Server address"
+							aria-label="Adresse du serveur"
 							maxlength="255"
 							required
 						/>
@@ -51,12 +51,12 @@
 							min="1"
 							max="65535"
 							name="port"
-							aria-label="Server port"
+							aria-label="port"
 						/>
 					</div>
 				</div>
-				<div class="connect-row">
-					<label for="connect:password">Password</label>
+				<div class="connect-row" style="display: none">
+					<label for="connect:password">Mot de passe</label>
 					<RevealPassword
 						v-slot:default="slotProps"
 						class="input-wrap password-container"
@@ -72,7 +72,7 @@
 						/>
 					</RevealPassword>
 				</div>
-				<div class="connect-row">
+				<div class="connect-row" style="display: none">
 					<label></label>
 					<div class="input-wrap">
 						<label class="tls">
@@ -82,11 +82,11 @@
 								name="tls"
 								:disabled="defaults.hasSTSPolicy"
 							/>
-							Use secure connection (TLS)
+							Connexion sécurisée (TLS)
 							<span
 								v-if="defaults.hasSTSPolicy"
 								class="tooltipped tooltipped-n tooltipped-no-delay"
-								aria-label="This network has a strict transport security policy, you will be unable to disable TLS"
+								aria-label="Ce réseau utilisate une politique strite, vous ne pourrez pas désactiver TLS"
 								>🔒 STS</span
 							>
 						</label>
@@ -96,13 +96,13 @@
 								type="checkbox"
 								name="rejectUnauthorized"
 							/>
-							Only allow trusted certificates
+							Authorise uniquement les certificats de confiance
 						</label>
 					</div>
 				</div>
 
-				<h2>Proxy Settings</h2>
-				<div class="connect-row">
+				<h2>Paramètres proxy</h2>
+				<div class="connect-row" style="display: none">
 					<label></label>
 					<div class="input-wrap">
 						<label for="connect:proxyEnabled">
@@ -112,20 +112,20 @@
 								type="checkbox"
 								name="proxyEnabled"
 							/>
-							Enable Proxy
+							Activer le proxy
 						</label>
 					</div>
 				</div>
 				<template v-if="defaults.proxyEnabled">
-					<div class="connect-row">
-						<label for="connect:proxyHost">SOCKS Address</label>
+					<div class="connect-row" style="display: none">
+						<label for="connect:proxyHost">Addresse SOCKS</label>
 						<div class="input-wrap">
 							<input
 								id="connect:proxyHost"
 								v-model.trim="defaults.proxyHost"
 								class="input"
 								name="proxyHost"
-								aria-label="Proxy host"
+								aria-label="Hôte Proxy"
 								maxlength="255"
 							/>
 							<span id="connect:proxyPortSeparator">:</span>
@@ -137,13 +137,13 @@
 								min="1"
 								max="65535"
 								name="proxyPort"
-								aria-label="SOCKS port"
+								aria-label="Port SOCKS"
 							/>
 						</div>
 					</div>
 
-					<div class="connect-row">
-						<label for="connect:proxyUsername">Proxy username</label>
+					<div class="connect-row" style="display: none">
+						<label for="connect:proxyUsername">Identifiant Proxy</label>
 						<input
 							id="connect:proxyUsername"
 							ref="proxyUsernameInput"
@@ -151,12 +151,12 @@
 							class="input username"
 							name="proxyUsername"
 							maxlength="100"
-							placeholder="Proxy username"
+							placeholder="Identifiant Proxy"
 						/>
 					</div>
 
-					<div class="connect-row">
-						<label for="connect:proxyPassword">Proxy password</label>
+					<div class="connect-row" style="display: none">
+						<label for="connect:proxyPassword">Mot de passe Proxy</label>
 						<RevealPassword
 							v-slot:default="slotProps"
 							class="input-wrap password-container"
@@ -167,7 +167,7 @@
 								v-model="defaults.proxyPassword"
 								class="input"
 								:type="slotProps.isVisible ? 'text' : 'password'"
-								placeholder="Proxy password"
+								placeholder="Mot de passe Proxyd"
 								name="proxyPassword"
 								maxlength="300"
 							/>
@@ -176,9 +176,9 @@
 				</template>
 			</template>
 			<template v-else-if="config.lockNetwork && !store.state.serverConfiguration?.public">
-				<h2>Network settings</h2>
-				<div class="connect-row">
-					<label for="connect:name">Name</label>
+				<h2 style="display: none;">Paramètres réseau</h2>
+				<div class="connect-row" style="display: none">
+					<label for="connect:name">Nom</label>
 					<input
 						id="connect:name"
 						v-model.trim="defaults.name"
@@ -187,8 +187,8 @@
 						maxlength="100"
 					/>
 				</div>
-				<div class="connect-row">
-					<label for="connect:password">Password</label>
+				<div class="connect-row" style="display: none">
+					<label for="connect:password">Mot de passe</label>
 					<RevealPassword
 						v-slot:default="slotProps"
 						class="input-wrap password-container"
@@ -198,7 +198,7 @@
 							v-model="defaults.password"
 							class="input"
 							:type="slotProps.isVisible ? 'text' : 'password'"
-							placeholder="Server password (optional)"
+							placeholder="Mot de passe du Serveur (optionel)"
 							name="password"
 							maxlength="300"
 						/>
@@ -206,9 +206,9 @@
 				</div>
 			</template>
 
-			<h2>User preferences</h2>
-			<div class="connect-row">
-				<label for="connect:nick">Nick</label>
+			<h2 style="display: none;">Préférences utilisateur</h2>
+			<div class="connect-row" style="display: none">
+				<label for="connect:nick">Pseudo</label>
 				<input
 					id="connect:nick"
 					v-model="defaults.nick"
@@ -221,8 +221,8 @@
 				/>
 			</div>
 			<template v-if="!config?.useHexIp">
-				<div class="connect-row">
-					<label for="connect:username">Username</label>
+				<div class="connect-row" style="display: none">
+					<label for="connect:username">Nom d'utilisateur</label>
 					<input
 						id="connect:username"
 						ref="usernameInput"
@@ -233,8 +233,8 @@
 					/>
 				</div>
 			</template>
-			<div class="connect-row">
-				<label for="connect:realname">Real name</label>
+			<div class="connect-row" style="display: none">
+				<label for="connect:realname">Nom</label>
 				<input
 					id="connect:realname"
 					v-model.trim="defaults.realname"
@@ -243,26 +243,25 @@
 					maxlength="300"
 				/>
 			</div>
-			<div class="connect-row">
-				<label for="connect:leaveMessage">Leave message</label>
+			<div class="connect-row" style="display: none">
+				<label for="connect:leaveMessage">Message de déconnexion</label>
 				<input
 					id="connect:leaveMessage"
 					v-model.trim="defaults.leaveMessage"
 					autocomplete="off"
 					class="input"
 					name="leaveMessage"
-					placeholder="The Lounge - https://thelounge.chat"
+					placeholder="exemple: À bientôt !"
 				/>
 			</div>
 			<template v-if="defaults.uuid && !store.state.serverConfiguration?.public">
-				<div class="connect-row">
+				<div class="connect-row" style="display: none">
 					<label for="connect:commands">
-						Commands
+						Commandes
 						<span
 							class="tooltipped tooltipped-ne tooltipped-no-delay"
-							aria-label="One /command per line.
-Each command will be executed in
-the server tab on new connection"
+							aria-label="Une /commande par ligne.
+Chaque commande sera executée sur le serveur lors de la connexion"
 						>
 							<button class="extra-help" />
 						</span>
@@ -279,8 +278,8 @@ the server tab on new connection"
 				</div>
 			</template>
 			<template v-else-if="!defaults.uuid">
-				<div class="connect-row">
-					<label for="connect:channels">Channels</label>
+				<div class="connect-row" style="display: none">
+					<label for="connect:channels">Canaux</label>
 					<input
 						id="connect:channels"
 						v-model.trim="defaults.join"
@@ -292,17 +291,17 @@ the server tab on new connection"
 
 			<template v-if="store.state.serverConfiguration?.public">
 				<template v-if="config?.lockNetwork">
-					<div class="connect-row">
+					<div class="connect-row" style="display: none">
 						<label></label>
 						<div class="input-wrap">
 							<label class="tls">
 								<input v-model="displayPasswordField" type="checkbox" />
-								I have a password
+								J'ai un mot de passe
 							</label>
 						</div>
 					</div>
-					<div v-if="displayPasswordField" class="connect-row">
-						<label for="connect:password">Password</label>
+					<div v-if="displayPasswordField" class="connect-row" style="display: none">
+						<label for="connect:password">Mot de passe</label>
 						<RevealPassword
 							v-slot:default="slotProps"
 							class="input-wrap password-container"
@@ -322,9 +321,9 @@ the server tab on new connection"
 				</template>
 			</template>
 			<template v-else>
-				<h2 id="label-auth">Authentication</h2>
+				<h2 id="label-auth">Authentification</h2>
 				<div class="connect-row connect-auth" role="group" aria-labelledby="label-auth">
-					<label class="opt">
+					<label class="opt" style="display: none;">
 						<input
 							:checked="!defaults.sasl"
 							type="radio"
@@ -332,9 +331,9 @@ the server tab on new connection"
 							value=""
 							@change="setSaslAuth('')"
 						/>
-						No authentication
+						Sans authentification
 					</label>
-					<label class="opt">
+					<label class="opt" style="display: none;">
 						<input
 							:checked="defaults.sasl === 'plain'"
 							type="radio"
@@ -342,7 +341,7 @@ the server tab on new connection"
 							value="plain"
 							@change="setSaslAuth('plain')"
 						/>
-						Username + password (SASL PLAIN)
+						Identifiant + mot de passe (SASL PLAIN)
 					</label>
 					<label
 						v-if="!store.state.serverConfiguration?.public && defaults.tls"
@@ -355,24 +354,24 @@ the server tab on new connection"
 							value="external"
 							@change="setSaslAuth('external')"
 						/>
-						Client certificate (SASL EXTERNAL)
+						Certificat client (SASL EXTERNAL)
 					</label>
 				</div>
 
 				<template v-if="defaults.sasl === 'plain'">
 					<div class="connect-row">
-						<label for="connect:username">Account</label>
+						<label for="connect:username">Compte</label>
 						<input
 							id="connect:saslAccount"
-							v-model.trim="defaults.saslAccount"
 							class="input"
 							name="saslAccount"
+							:value="defaults.nick"
 							maxlength="100"
 							required
 						/>
 					</div>
 					<div class="connect-row">
-						<label for="connect:password">Password</label>
+						<label for="connect:password">Mot de passe</label>
 						<RevealPassword
 							v-slot:default="slotProps"
 							class="input-wrap password-container"
@@ -390,10 +389,10 @@ the server tab on new connection"
 					</div>
 				</template>
 				<div v-else-if="defaults.sasl === 'external'" class="connect-sasl-external">
-					<p>The Lounge automatically generates and manages the client certificate.</p>
+					<p>The Lounge génère et gère automatiquement les certificats client.</p>
 					<p>
-						On the IRC server, you will need to tell the services to attach the
-						certificate fingerprint (certfp) to your account, for example:
+						Sur le serveur IRC, vous devrez indiquer au service de lier l'emprunter
+						du certificat (certfp) à votre compte, par exemple:
 					</p>
 					<pre><code>/msg NickServ CERT ADD</code></pre>
 				</div>
@@ -401,8 +400,8 @@ the server tab on new connection"
 
 			<div>
 				<button type="submit" class="btn" :disabled="disabled ? true : false">
-					<template v-if="defaults.uuid">Save network</template>
-					<template v-else>Connect</template>
+					<template v-if="defaults.uuid">Sauvegarder le réseau</template>
+					<template v-else>Connexion</template>
 				</button>
 			</div>
 		</form>

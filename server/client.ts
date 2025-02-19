@@ -202,8 +202,6 @@ class Client {
 			log.info(`${colors.bold("-------------------------------------------------------")}`);
 			log.info(`client.config.sessions : ${colors.bold(JSON.stringify(client.config.sessions))}`);
 			log.info(`${colors.bold("-------------------------------------------------------")}`);
-			log.info(`client.manager : ${colors.bold(JSON.stringify(client.manager))}`);
-			log.info(`${colors.bold("-------------------------------------------------------")}`);
 			log.info(`client.manager.clients : ${colors.bold(JSON.stringify(client.manager.clients))}`);
 			log.info(`${colors.bold("-------------------------------------------------------")}`);
 

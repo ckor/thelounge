@@ -3,9 +3,9 @@
 	<table v-else class="channel-list">
 		<thead>
 			<tr>
-				<th class="channel">Channel</th>
-				<th class="users">Users</th>
-				<th class="topic">Topic</th>
+				<th class="channel">Canal</th>
+				<th class="users">Utilisateurs</th>
+				<th class="topic">Sujet</th>
 			</tr>
 		</thead>
 		<tbody>

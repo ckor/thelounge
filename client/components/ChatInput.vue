@@ -19,7 +19,7 @@
 			v-if="store.state.serverConfiguration?.fileUpload"
 			id="upload-tooltip"
 			class="tooltipped tooltipped-w tooltipped-no-touch"
-			aria-label="Upload file"
+			aria-label="Joindre un fichier"
 			@click="openFileUpload"
 		>
 			<input
@@ -33,19 +33,19 @@
 			<button
 				id="upload"
 				type="button"
-				aria-label="Upload file"
+				aria-label="Joindre un fichier"
 				:disabled="!store.state.isConnected"
 			/>
 		</span>
 		<span
 			id="submit-tooltip"
 			class="tooltipped tooltipped-w tooltipped-no-touch"
-			aria-label="Send message"
+			aria-label="Envoyer"
 		>
 			<button
 				id="submit"
 				type="submit"
-				aria-label="Send message"
+				aria-label="Envoyer"
 				:disabled="!store.state.isConnected"
 			/>
 		</span>
@@ -132,7 +132,7 @@ export default defineComponent({
 
 		const getInputPlaceholder = (channel: ClientChan) => {
 			if (channel.type === ChanType.CHANNEL || channel.type === ChanType.QUERY) {
-				return `Write to ${channel.name}`;
+				return `Votre message...`;
 			}
 
 			return "";

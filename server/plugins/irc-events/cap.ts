@@ -45,7 +45,7 @@ export default <IrcEventHandler>function (irc, network) {
 			network.getLobby().pushMessage(
 				client,
 				new Msg({
-					text: `Server sent a strict transport security policy, reconnecting to ${network.host}:${port}…`,
+					text: `Le serveur a envoyé une politique de sécurité stricte, reconnexion à ${network.host}:${port}…`,
 				}),
 				true
 			);

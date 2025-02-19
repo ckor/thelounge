@@ -4,15 +4,15 @@
 			<SidebarToggle />
 		</div>
 		<div class="container">
-			<h1 class="title">Help</h1>
+			<h1 class="title">Aide</h1>
 
 			<h2 class="help-version-title">
-				<span>About The Lounge</span>
+				<span>À propos de The Lounge</span>
 				<small>
 					v{{ store.state.serverConfiguration?.version }} (<router-link
 						id="view-changelog"
 						to="/changelog"
-						>release notes</router-link
+						>Notes de version</router-link
 					>)
 				</small>
 			</h2>
@@ -22,7 +22,7 @@
 
 				<template v-if="store.state.serverConfiguration?.gitCommit">
 					<p>
-						The Lounge is running from source (<a
+						The Lounge a démarré depuis la source (<a
 							:href="`https://github.com/thelounge/thelounge/tree/${store.state.serverConfiguration?.gitCommit}`"
 							target="_blank"
 							rel="noopener"
@@ -32,28 +32,28 @@
 
 					<ul>
 						<li>
-							Compare
+							Comparer
 							<a
 								:href="`https://github.com/thelounge/thelounge/compare/${store.state.serverConfiguration?.gitCommit}...master`"
 								target="_blank"
 								rel="noopener"
-								>between
-								<code>{{ store.state.serverConfiguration?.gitCommit }}</code> and
+								>entre
+								<code>{{ store.state.serverConfiguration?.gitCommit }}</code> et
 								<code>master</code></a
 							>
-							to see what you are missing
+							pour voir ce qui manque
 						</li>
 						<li>
-							Compare
+							Comparer
 							<a
 								:href="`https://github.com/thelounge/thelounge/compare/${store.state.serverConfiguration?.version}...${store.state.serverConfiguration?.gitCommit}`"
 								target="_blank"
 								rel="noopener"
-								>between
-								<code>{{ store.state.serverConfiguration?.version }}</code> and
+								>entre
+								<code>{{ store.state.serverConfiguration?.version }}</code> et
 								<code>{{ store.state.serverConfiguration?.gitCommit }}</code></a
 							>
-							to see your local changes
+							pour voir les changements locaux
 						</li>
 					</ul>
 				</template>
@@ -64,7 +64,7 @@
 						target="_blank"
 						rel="noopener"
 						class="website-link"
-						>Website</a
+						>Site web</a
 					>
 				</p>
 				<p>
@@ -82,42 +82,42 @@
 						target="_blank"
 						rel="noopener"
 						class="report-issue-link"
-						>Report an issue…</a
+						>Signaler un problème…</a
 					>
 				</p>
 			</div>
 
-			<h2 v-if="isTouch">Gestures</h2>
+			<h2 v-if="isTouch">Mouvements tactiles</h2>
 
 			<div v-if="isTouch" class="help-item">
-				<div class="subject gesture">Single-Finger Swipe Left</div>
+				<div class="subject gesture">Glissement simple sur la gauche</div>
 				<div class="description">
-					<p>Hide sidebar.</p>
+					<p>Masquer la bar latérale.</p>
 				</div>
 			</div>
 
 			<div v-if="isTouch" class="help-item">
-				<div class="subject gesture">Single-Finger Swipe Right</div>
+				<div class="subject gesture">Glissement simple sur la droite</div>
 				<div class="description">
-					<p>Show sidebar.</p>
+					<p>Afficher la bar latérale.</p>
 				</div>
 			</div>
 
 			<div v-if="isTouch" class="help-item">
-				<div class="subject gesture">Two-Finger Swipe Left</div>
+				<div class="subject gesture">Glissement double sur la gauche</div>
 				<div class="description">
-					<p>Switch to the next window in the channel list.</p>
+					<p>Basculer vers la prochaine fenêtre dans la liste des canaux.</p>
 				</div>
 			</div>
 
 			<div v-if="isTouch" class="help-item">
-				<div class="subject gesture">Two-Finger Swipe Right</div>
+				<div class="subject gesture">Glissement double sur la droite</div>
 				<div class="description">
-					<p>Switch to the previous window in the channel list.</p>
+					<p>Basculer vers la fenêtre précédente dans la liste des canaux.</p>
 				</div>
 			</div>
 
-			<h2>Keyboard Shortcuts</h2>
+			<h2>Raccourcis clavier</h2>
 
 			<div class="help-item">
 				<div class="subject">
@@ -125,7 +125,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>⇧</kbd> <kbd>↓</kbd></span>
 				</div>
 				<div class="description">
-					<p>Switch to the next lobby in the channel list.</p>
+					<p>Basculer vers le prochain lobby de la liste des canaux.</p>
 				</div>
 			</div>
 
@@ -135,7 +135,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>⇧</kbd> <kbd>↑</kbd></span>
 				</div>
 				<div class="description">
-					<p>Switch to the previous lobby in the channel list.</p>
+					<p>Basculer vers le lobby précédent de la liste des canaux.</p>
 				</div>
 			</div>
 
@@ -145,7 +145,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>⇧</kbd> <kbd>←</kbd></span>
 				</div>
 				<div class="description">
-					<p>Collapse current network.</p>
+					<p>Réduire le réseau actuel.</p>
 				</div>
 			</div>
 
@@ -155,7 +155,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>⇧</kbd> <kbd>→</kbd></span>
 				</div>
 				<div class="description">
-					<p>Expand current network.</p>
+					<p>Etendre le réseau actuel.</p>
 				</div>
 			</div>
 
@@ -165,7 +165,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>↓</kbd></span>
 				</div>
 				<div class="description">
-					<p>Switch to the next window in the channel list.</p>
+					<p>Basculer vers la prochaine fenêtre dans la liste des canaux.</p>
 				</div>
 			</div>
 
@@ -175,7 +175,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>↑</kbd></span>
 				</div>
 				<div class="description">
-					<p>Switch to the previous window in the channel list.</p>
+					<p>Basculer vers la fenêtre précédente dans la liste des canaux.</p>
 				</div>
 			</div>
 
@@ -185,7 +185,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>⌘</kbd> <kbd>↓</kbd></span>
 				</div>
 				<div class="description">
-					<p>Switch to the next window with unread messages in the channel list.</p>
+					<p>Basculer vers la prochaine fenêtre avec des messages non lu dans la liste des canaux.</p>
 				</div>
 			</div>
 
@@ -195,7 +195,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>⌘</kbd> <kbd>↑</kbd></span>
 				</div>
 				<div class="description">
-					<p>Switch to the previous window with unread messages in the channel list.</p>
+					<p>Basculer vers la précédente fenêtre avec des messages non lu dans la liste des canaux.</p>
 				</div>
 			</div>
 
@@ -205,7 +205,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>A</kbd></span>
 				</div>
 				<div class="description">
-					<p>Switch to the first window with unread messages.</p>
+					<p>Basculer vers la première fenêtre avec des messages non lu dans la liste des canaux.</p>
 				</div>
 			</div>
 
@@ -215,7 +215,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>S</kbd></span>
 				</div>
 				<div class="description">
-					<p>Toggle sidebar.</p>
+					<p>Bar latérale.</p>
 				</div>
 			</div>
 
@@ -225,7 +225,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>U</kbd></span>
 				</div>
 				<div class="description">
-					<p>Toggle channel user list.</p>
+					<p>Liste des utilisateurs du canal.</p>
 				</div>
 			</div>
 
@@ -235,7 +235,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>J</kbd></span>
 				</div>
 				<div class="description">
-					<p>Toggle jump to channel switcher.</p>
+					<p>Bascule automatique de canal.</p>
 				</div>
 			</div>
 
@@ -245,7 +245,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>M</kbd></span>
 				</div>
 				<div class="description">
-					<p>Toggle recent mentions popup.</p>
+					<p>Popup mentions récentes.</p>
 				</div>
 			</div>
 
@@ -255,7 +255,7 @@
 					<span v-else><kbd>⌥</kbd> <kbd>/</kbd></span>
 				</div>
 				<div class="description">
-					<p>Switch to the help menu.</p>
+					<p>Basculer sur le menu d'aide.</p>
 				</div>
 			</div>
 
@@ -265,13 +265,13 @@
 				</div>
 				<div class="description">
 					<p>
-						Close current contextual window (context menu, image viewer, topic edit,
-						etc) and remove focus from input.
+						Fermer la fenêtre contextuel actuelle (Menu contextuel, Prévisualisation, modification de sujet,
+						etc) et défocalisation du champ actif.
 					</p>
 				</div>
 			</div>
 
-			<h2>Formatting Shortcuts</h2>
+			<h2>Raccourcis de formatage</h2>
 
 			<div class="help-item">
 				<div class="subject">
@@ -280,23 +280,21 @@
 				</div>
 				<div class="description">
 					<p>
-						Mark any text typed after this shortcut to be colored. After hitting this
-						shortcut, enter an integer in the range
-						<code>0—15</code> to select the desired color, or use the autocompletion
-						menu to choose a color name (see below).
+						Marquer tout texte à la suite de ce raccourci pour qu'il soit coloré. Après usage de ce raccourci, saisir un entier dans la plage
+						<code>0—15</code> pour choisir la couleur ou utiliser l'autocompletion.
+						menu de selection de couleur (voir ci-dessous).
 					</p>
 					<p>
-						Background color can be specified by putting a comma and another integer in
-						the range <code>0—15</code> after the foreground color number
-						(autocompletion works too).
+						La couleur de fond peut être spécifiée en ajoutant un autre entier dans la plage<code>0-15</code> après une virgule.
+						(l'autocomplétion fonctionne également).
 					</p>
 					<p>
-						A color reference can be found
+						Liste des références couleurs
 						<a
 							href="https://modern.ircdocs.horse/formatting.html#colors"
 							target="_blank"
 							rel="noopener"
-							>here</a
+							>ici</a
 						>.
 					</p>
 				</div>
@@ -309,8 +307,8 @@
 				</div>
 				<div class="description">
 					<p>
-						Mark all text typed after this shortcut as
-						<span class="irc-bold">bold</span>.
+						Marquer tout texte à la suite de ce raccourci comme
+						<span class="irc-bold">gras</span>.
 					</p>
 				</div>
 			</div>
@@ -322,8 +320,8 @@
 				</div>
 				<div class="description">
 					<p>
-						Mark all text typed after this shortcut as
-						<span class="irc-underline">underlined</span>.
+						Marquer tout texte à la suite de ce raccourci comme
+						<span class="irc-underline">souligné</span>.
 					</p>
 				</div>
 			</div>
@@ -335,8 +333,8 @@
 				</div>
 				<div class="description">
 					<p>
-						Mark all text typed after this shortcut as
-						<span class="irc-italic">italics</span>.
+						Marquer tout texte à la suite de ce raccourci comme
+						<span class="irc-italic">italique</span>.
 					</p>
 				</div>
 			</div>
@@ -348,8 +346,8 @@
 				</div>
 				<div class="description">
 					<p>
-						Mark all text typed after this shortcut as
-						<span class="irc-strikethrough">struck through</span>.
+						Marquer tout texte à la suite de ce raccourci comme
+						<span class="irc-strikethrough">barré</span>.
 					</p>
 				</div>
 			</div>
@@ -361,8 +359,8 @@
 				</div>
 				<div class="description">
 					<p>
-						Mark all text typed after this shortcut as
-						<span class="irc-monospace">monospaced</span>.
+						Marquer tout texte à la suite de ce raccourci comme
+						<span class="irc-monospace">Espacement fixe</span>.
 					</p>
 				</div>
 			</div>
@@ -374,19 +372,18 @@
 				</div>
 				<div class="description">
 					<p>
-						Mark all text typed after this shortcut to be reset to its original
-						formatting.
+						Marquer tout texte à la suite de ce raccourci pour réinitilaliser son format d'origine.
 					</p>
 				</div>
 			</div>
 
-			<h2>Autocompletion</h2>
+			<h2>Autocomplétion</h2>
 
 			<p>
-				To auto-complete nicknames, channels, commands, and emoji, type one of the
-				characters below to open a suggestion list. Use the <kbd>↑</kbd> and
-				<kbd>↓</kbd> keys to highlight an item, and insert it by pressing <kbd>Tab</kbd> or
-				<kbd>Enter</kbd> (or by clicking the desired item).
+				Pour autocompléter les pseudos, canaux, commandes, et emoji, tapez l'un des caractères suivant 
+				pour ouvrir une liste de suggestion. Utilisez les touches <kbd>↑</kbd> et
+				<kbd>↓</kbd> pour mettre en évidence un élément et tapez la touche <kbd>Tab</kbd> ou
+				<kbd>Entrée</kbd> pour l'insérer (ou en cliquant sur l'élément désiré).
 			</p>
 			<p>Autocompletion can be disabled in settings.</p>
 
@@ -395,7 +392,7 @@
 					<code>@</code>
 				</div>
 				<div class="description">
-					<p>Nickname</p>
+					<p>Pseudo</p>
 				</div>
 			</div>
 
@@ -404,7 +401,7 @@
 					<code>#</code>
 				</div>
 				<div class="description">
-					<p>Channel</p>
+					<p>Canal</p>
 				</div>
 			</div>
 
@@ -413,7 +410,7 @@
 					<code>/</code>
 				</div>
 				<div class="description">
-					<p>Commands (see list of commands below)</p>
+					<p>Commandes (voir liste des commandes ci-dessous)</p>
 				</div>
 			</div>
 
@@ -423,20 +420,20 @@
 				</div>
 				<div class="description">
 					<p>
-						Emoji (note: requires two search characters, to avoid conflicting with
-						common emoticons like <code>:)</code>)
+						Emoji (note: requière deux caractères de recherche pour éviter les conflits avec 
+						les smileys du type <code>:)</code>)
 					</p>
 				</div>
 			</div>
 
-			<h2>Commands</h2>
+			<h2>Commandes</h2>
 
 			<div class="help-item">
 				<div class="subject">
 					<code>/away [message]</code>
 				</div>
 				<div class="description">
-					<p>Mark yourself as away with an optional message.</p>
+					<p>Se marquer comme absent avec un message optionel.</p>
 				</div>
 			</div>
 
@@ -445,18 +442,17 @@
 					<code>/back</code>
 				</div>
 				<div class="description">
-					<p>Remove your away status (set with <code>/away</code>).</p>
+					<p>Enlever la statut absent (défini par <code>/away</code>).</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/ban nick</code>
+					<code>/ban pseudo</code>
 				</div>
 				<div class="description">
 					<p>
-						Ban (<code>+b</code>) a user from the current channel. This can be a
-						nickname or a hostmask.
+						Bannir (<code>+b</code>) un utilisateur du canal actuel. Peut être un pseudo ou un sous réseau.
 					</p>
 				</div>
 			</div>
@@ -466,7 +462,7 @@
 					<code>/banlist</code>
 				</div>
 				<div class="description">
-					<p>Load the banlist for the current channel.</p>
+					<p>Affiche la liste des bannis du canal actuel.</p>
 				</div>
 			</div>
 
@@ -476,7 +472,7 @@
 				</div>
 				<div class="description">
 					<p>
-						Collapse all previews in the current channel (opposite of
+						Réduire toutes les prévisualisations dans le canal actuel (l'inverse de
 						<code>/expand</code>)
 					</p>
 				</div>
@@ -484,12 +480,12 @@
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/connect host [port]</code>
+					<code>/connect hôte [port]</code>
 				</div>
 				<div class="description">
 					<p>
-						Connect to a new IRC network. If <code>port</code> starts with a
-						<code>+</code> sign, the connection will be made secure using TLS.
+						Connexion à un nouveau réseau IRC. Si le <code>port</code> commence par un signe
+						<code>+</code>, la connexion utilisera TLS.
 					</p>
 					<p>Alias: <code>/server</code></p>
 				</div>
@@ -497,17 +493,17 @@
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/ctcp target cmd [args]</code>
+					<code>/ctcp cible commande [arguments]</code>
 				</div>
 				<div class="description">
 					<p>
-						Send a <abbr title="Client-to-client protocol">CTCP</abbr>
-						request. Read more about this on
+						Envoyer une requête <abbr title="Client-to-client protocol">CTCP</abbr>
+						Lire d'avantage à ce sujet sur
 						<a
 							href="https://en.wikipedia.org/wiki/Client-to-client_protocol"
 							target="_blank"
 							rel="noopener"
-							>the dedicated Wikipedia article</a
+							>l'article dédié wikipedia</a
 						>.
 					</p>
 				</div>
@@ -515,24 +511,22 @@
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/deop nick [...nick]</code>
+					<code>/deop pseudo [...pseudo]</code>
 				</div>
 				<div class="description">
 					<p>
-						Remove op (<code>-o</code>) from one or several users in the current
-						channel.
+						Retire op (<code>-o</code>) d'un ou plusieurs utilisateurs dans le canal actuel.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/devoice nick [...nick]</code>
+					<code>/devoice pseudo [...pseudo]</code>
 				</div>
 				<div class="description">
 					<p>
-						Remove voice (<code>-v</code>) from one or several users in the current
-						channel.
+						Rendre muet (<code>-v</code>) un ou plusieurs utilisateurs du canal actuel.
 					</p>
 				</div>
 			</div>
@@ -542,7 +536,7 @@
 					<code>/disconnect [message]</code>
 				</div>
 				<div class="description">
-					<p>Disconnect from the current network with an optionally-provided message.</p>
+					<p>Se déconnecter du réseau actuel avec un message optionel.</p>
 				</div>
 			</div>
 
@@ -552,33 +546,30 @@
 				</div>
 				<div class="description">
 					<p>
-						Expand all previews in the current channel (opposite of
-						<code>/collapse</code>)
+						Etendre toutes les prévisualisations du canal actuel (l'opposé de <code>/collapse</code>)
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/invite nick [channel]</code>
+					<code>/invite pseudo [canal]</code>
 				</div>
 				<div class="description">
 					<p>
-						Invite a user to the specified channel. If
-						<code>channel</code> is omitted, user will be invited to the current
-						channel.
+						Inviter un utilisateur dans le canal spécifié. Si le <code>canal</code> n'est pas spécifié
+						il sera invité dans le canal actuel.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/ignore nick</code>
+					<code>/ignore pseudo</code>
 				</div>
 				<div class="description">
 					<p>
-						Block any messages from the specified user on the current network. This can
-						be a nickname or a hostmask.
+						Bloquer l'utilisateur sur ce réseau. Cela peut être un pseudo ou un sous réseau.
 					</p>
 				</div>
 			</div>
@@ -588,39 +579,38 @@
 					<code>/ignorelist</code>
 				</div>
 				<div class="description">
-					<p>Load the list of ignored users for the current network.</p>
+					<p>Affiche la liste des utilisateurs bloqués sur le réseau actuel.</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/join channel [password]</code>
+					<code>/join canal [mot de passe]</code>
 				</div>
 				<div class="description">
 					<p>
-						Join a channel. Password is only needed in protected channels and can
-						usually be omitted.
+						Rejoindre un canal. Le <code>mot de passe</code> n'est requis que pour les canaux protégés par mots de passe.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/kick nick [reason]</code>
+					<code>/kick pseudo [raison]</code>
 				</div>
 				<div class="description">
-					<p>Kick a user from the current channel.</p>
+					<p>Expulse un utilisateur du canal actuel avec un message d'explication.</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/kickban nick [reason]</code>
+					<code>/kickban pseudo [raison]</code>
 				</div>
 				<div class="description">
 					<p>
-						Kick and ban (<code>+b</code>) a user from the current channel. Unlike
-						<code>/ban</code>, only nicknames (and not host masks) can be used.
+						Expulse et banni (<code>+b</code>) un utilisateur du canal actuel. Contrairement à
+						<code>/ban</code>, seul les pseudos (et non les sous réseaux) peuvent être utilisés.
 					</p>
 				</div>
 			</div>
@@ -630,7 +620,7 @@
 					<code>/list</code>
 				</div>
 				<div class="description">
-					<p>Retrieve a list of available channels on this network.</p>
+					<p>Lister les canaux de ce réseau.</p>
 				</div>
 			</div>
 
@@ -640,85 +630,80 @@
 				</div>
 				<div class="description">
 					<p>
-						Send an action message to the current channel. The Lounge will display it
-						inline, as if the message was posted in the third person.
+						Envoi un message dans le canal actuel. Il sera affiché à la troisième personne.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/mode flags [args]</code>
+					<code>/mode options [arguments]</code>
 				</div>
 				<div class="description">
 					<p>
-						Set the given flags to the current channel if the active window is a
-						channel, another user if the active window is a private message window, or
-						yourself if the current window is a server window.
+						Défini les options suivantes au canal actuel si la fenêtre active est un canal,
+						à un autre utilisateur si la fenêtre est une disscussion privée ou à vous même si c'est dans une fenêtre serveur.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/msg channel message</code>
+					<code>/msg canal message</code>
 				</div>
 				<div class="description">
-					<p>Send a message to the specified channel.</p>
+					<p>Envoyer un message dans le canal spécifié.</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/mute [...channel]</code>
+					<code>/mute [...canal]</code>
 				</div>
 				<div class="description">
 					<p>
-						Prevent messages from generating any feedback for a channel. This turns off
-						the highlight indicator, hides mentions and inhibits push notifications.
-						Muting a network lobby mutes the entire network. Not specifying any channel
-						target mutes the current channel. Revert with <code>/unmute</code>.
+						Rend un canal muet (retire toutes notifications, mentions, indicateurs de surbrillance etc..).
+						Réversible avec <code>/unmute</code>.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/nick newnick</code>
+					<code>/nick pseudo</code>
 				</div>
 				<div class="description">
-					<p>Change your nickname on the current network.</p>
+					<p>Changer de pseudo dans le réseau actuel.</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/notice channel message</code>
+					<code>/notice canal message</code>
 				</div>
 				<div class="description">
-					<p>Sends a notice message to the specified channel.</p>
+					<p>Envoi un message d'information au canal spécifié.</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/op nick [...nick]</code>
+					<code>/op pseudo [...pseudo]</code>
 				</div>
 				<div class="description">
-					<p>Give op (<code>+o</code>) to one or several users in the current channel.</p>
+					<p>Octroie op (<code>+o</code>) à/aux utilisateur(s) spécifié(s) dans le canal actuel.</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/part [channel]</code>
+					<code>/part [canal]</code>
 				</div>
 				<div class="description">
 					<p>
-						Close the specified channel or private message window, or the current
-						channel if <code>channel</code> is omitted.
+						Ferme le canal spécifié, conversation privée ou le canal actuel si <code>canal</code> n'est pas spécifié.
 					</p>
-					<p>Aliases: <code>/close</code>, <code>/leave</code></p>
+					<p>Alias: <code>/close</code>, <code>/leave</code></p>
 				</div>
 			</div>
 
@@ -728,8 +713,7 @@
 				</div>
 				<div class="description">
 					<p>
-						Leave and immediately rejoin the current channel. Useful to quickly get op
-						from ChanServ in an empty channel, for example.
+						Quite et rejoins immédiatement le canal actuel.
 					</p>
 					<p>Alias: <code>/cycle</code></p>
 				</div>
@@ -737,10 +721,10 @@
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/query nick</code>
+					<code>/query pseudo</code>
 				</div>
 				<div class="description">
-					<p>Send a private message to the specified user.</p>
+					<p>Envoi un message privé à l'utilisateur spécifié.</p>
 				</div>
 			</div>
 
@@ -749,7 +733,7 @@
 					<code>/quit [message]</code>
 				</div>
 				<div class="description">
-					<p>Disconnect from the current network with an optional message.</p>
+					<p>Se déconnecte du réseau actuel avec un message optionel.</p>
 				</div>
 			</div>
 
@@ -758,94 +742,92 @@
 					<code>/raw message</code>
 				</div>
 				<div class="description">
-					<p>Send a raw message to the current IRC network.</p>
-					<p>Aliases: <code>/quote</code>, <code>/send</code></p>
+					<p>Envoi un message brut au réseau IRC actuel.</p>
+					<p>Alias: <code>/quote</code>, <code>/send</code></p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/slap nick</code>
+					<code>/slap pseudo</code>
 				</div>
 				<div class="description">
-					<p>Slap someone in the current channel with a trout!</p>
+					<p>Slap l'utilisateur spécifié!</p>
 				</div>
 			</div>
 
 			<div v-if="store.state.settings.searchEnabled" class="help-item">
 				<div class="subject">
-					<code>/search query</code>
+					<code>/search requete</code>
 				</div>
 				<div class="description">
-					<p>Search for messages in the current channel / user</p>
+					<p>Cherche un message dans le canal (ou discussion privée) actuel</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/topic [newtopic]</code>
+					<code>/topic [sujet]</code>
 				</div>
 				<div class="description">
 					<p>
-						Get the topic in the current channel. If <code>newtopic</code> is specified,
-						sets the topic in the current channel.
+						Affiche le sujet du canal actuel. Si <code>sujet</code> est spécifié,
+						change le sujet du canal actuel.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/unban nick</code>
+					<code>/unban pseudo</code>
 				</div>
 				<div class="description">
 					<p>
-						Unban (<code>-b</code>) a user from the current channel. This can be a
-						nickname or a hostmask.
+						Débanni (<code>-b</code>) un utilisateur du canal actuel. Peut être un pseudo ou un sous-réseau.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/unignore nick</code>
+					<code>/unignore pseudo</code>
 				</div>
 				<div class="description">
 					<p>
-						Unblock messages from the specified user on the current network. This can be
-						a nickname or a hostmask.
+						Débloque l'utilisateur spécifié sur le réseau actuel. Peut être un pseudo ou un sous-réseau.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/unmute [...channel]</code>
+					<code>/unmute [...canal]</code>
 				</div>
 				<div class="description">
 					<p>
-						Un-mutes the given channel(s) or the current channel if no channel is
-						provided. See <code>/mute</code> for more information.
+						Rétablis les capacités de notification du/des canal/canaux spéfifié(s) ou du canal actif si
+						aucun spécifié. Voir <code>/mute</code> pour plus d'informations.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/voice nick [...nick]</code>
+					<code>/voice pseudo [...pseudo]</code>
 				</div>
 				<div class="description">
 					<p>
-						Give voice (<code>+v</code>) to one or several users in the current channel.
+						Donne la parole (<code>+v</code>) à/aux utilisateur(s) spécifié(s) dans le canal actuel.
 					</p>
 				</div>
 			</div>
 
 			<div class="help-item">
 				<div class="subject">
-					<code>/whois nick</code>
+					<code>/whois pseudo</code>
 				</div>
 				<div class="description">
-					<p>Retrieve information about the given user on the current network.</p>
+					<p>Affiche les informations de l'utilisateur spécifié dans le réseau actuel.</p>
 				</div>
 			</div>
 		</div>

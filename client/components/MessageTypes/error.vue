@@ -32,32 +32,32 @@ export default defineComponent({
 
 			switch (props.message.error) {
 				case "bad_channel_key":
-					return `Cannot join ${chan} - Bad channel key.`;
+					return `Impossible de rejoindre ${chan} - Mauvais mot de passe de canal.`;
 				case "banned_from_channel":
-					return `Cannot join ${chan} - You have been banned from the channel.`;
+					return `Impossible de rejoindre ${chan} - Vous etes bannis du canal..`;
 				case "cannot_send_to_channel":
-					return `Cannot send to channel ${chan}`;
+					return `Impossible de communiquer avec le canal ${chan}`;
 				case "channel_is_full":
-					return `Cannot join ${chan} - Channel is full.`;
+					return `Impossible de rejoindre ${chan} - Canal plein.`;
 				case "chanop_privs_needed":
-					return "Cannot perform action: You're not a channel operator.";
+					return "Action impossible: Permissions insuffisantes.";
 				case "invite_only_channel":
-					return `Cannot join ${chan} - Channel is invite only.`;
+					return `Impossible de rejoindre ${chan} - Canal sur invitation uniquement.`;
 				case "no_such_nick":
-					return `User ${nick} hasn't logged in or does not exist.`;
+					return `${nick} ne s'est pas connecté ou n'existe pas.`;
 				case "not_on_channel":
-					return "Cannot perform action: You're not on the channel.";
+					return "Action impossible: Vous n'etes pas sur le canal.";
 				case "password_mismatch":
-					return "Password mismatch.";
+					return "Erreur de mot de passe.";
 				case "too_many_channels":
-					return `Cannot join ${chan} - You've already reached the maximum number of channels allowed.`;
+					return `Impossible de rejoindre ${chan} - Vous avez atteint la limite de connexions simultané aux cannaux.`;
 				case "unknown_command":
 					// TODO: not having message.command should never happen, so force existence
-					return `Unknown command: ${props.message.command || "!UNDEFINED_COMMAND_BUG"}`;
+					return `Commande inconnue: ${props.message.command || "!UNDEFINED_COMMAND_BUG"}`;
 				case "user_not_in_channel":
-					return `User ${nick} is not on the channel.`;
+					return `${nick} n'est pas sur le canal.`;
 				case "user_on_channel":
-					return `User ${nick} is already on the channel.`;
+					return `${nick} est déjà sur le canal.`;
 				default:
 					if (props.message.reason) {
 						return `${props.message.reason} (${

@@ -16,7 +16,7 @@
 				height="170"
 			/>
 
-			<label for="signin-username">Username</label>
+			<label for="signin-username">Identifiant</label>
 			<input
 				id="signin-username"
 				v-model="username"
@@ -31,7 +31,7 @@
 			/>
 
 			<div class="password-container">
-				<label for="signin-password">Password</label>
+				<label for="signin-password">Mot de passe</label>
 				<RevealPassword v-slot:default="slotProps">
 					<input
 						id="signin-password"
@@ -46,9 +46,9 @@
 				</RevealPassword>
 			</div>
 
-			<div v-if="errorShown" class="error">Authentication failed.</div>
+			<div v-if="errorShown" class="error">Echec de l'authentification.</div>
 
-			<button :disabled="inFlight" type="submit" class="btn">Sign in</button>
+			<button :disabled="inFlight" type="submit" class="btn">Connexion</button>
 		</form>
 	</div>
 </template>

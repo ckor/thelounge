@@ -17,7 +17,7 @@
 			placeholder="Channel"
 			pattern="[^\s]+"
 			maxlength="200"
-			title="The channel name may not contain spaces"
+			title="Le nom du canal ne peut pas contenir d'espaces"
 			required
 		/>
 		<input
@@ -28,7 +28,7 @@
 			placeholder="Password (optional)"
 			pattern="[^\s]+"
 			maxlength="200"
-			title="The channel password may not contain spaces"
+			title="Le mot de passe du canal ne peut pas contenir d'espaces"
 			autocomplete="new-password"
 		/>
 		<button type="submit" class="btn btn-small">Join</button>

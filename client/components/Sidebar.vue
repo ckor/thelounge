@@ -5,18 +5,18 @@
 				<img
 					:src="`img/logo-${isPublic() ? 'horizontal-' : ''}transparent-bg.svg`"
 					class="logo"
-					alt="The Lounge"
+					alt="Chat LOGEA"
 					role="presentation"
 				/>
 				<img
 					:src="`img/logo-${isPublic() ? 'horizontal-' : ''}transparent-bg-inverted.svg`"
 					class="logo-inverted"
-					alt="The Lounge"
+					alt="Chat LOGEA"
 					role="presentation"
 				/>
 				<span
 					v-if="isDevelopment"
-					title="The Lounge has been built in development mode"
+					title="mode developpeur"
 					:style="{
 						backgroundColor: '#ff9e18',
 						color: '#000',
@@ -24,7 +24,7 @@
 						borderRadius: '4px',
 						fontSize: '12px',
 					}"
-					>DEVELOPER</span
+					>DEVELOPPEUR</span
 				>
 			</div>
 			<NetworkList />
@@ -32,7 +32,7 @@
 		<footer id="footer">
 			<span
 				class="tooltipped tooltipped-n tooltipped-no-touch"
-				aria-label="Connect to network"
+				aria-label="Connexion réseau"
 				><router-link
 					v-slot:default="{navigate, isActive}"
 					to="/connect"
@@ -46,7 +46,7 @@
 						@keypress.enter="navigate"
 					/> </router-link
 			></span>
-			<span class="tooltipped tooltipped-n tooltipped-no-touch" aria-label="Settings"
+			<span class="tooltipped tooltipped-n tooltipped-no-touch" aria-label="Paramètres"
 				><router-link
 					v-slot:default="{navigate, isActive}"
 					to="/settings"
@@ -64,8 +64,8 @@
 				class="tooltipped tooltipped-n tooltipped-no-touch"
 				:aria-label="
 					store.state.serverConfiguration?.isUpdateAvailable
-						? 'Help\n(update available)'
-						: 'Help'
+						? 'Aide\n(MAJ Disponible)'
+						: 'Aide'
 				"
 				><router-link
 					v-slot:default="{navigate, isActive}"

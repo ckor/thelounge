@@ -406,7 +406,7 @@ function fetch(uri: string, headers: Record<string, string>) {
 
 	if (!prefetchTimeout) {
 		log.warn(
-			"prefetchTimeout is missing from your The Lounge configuration, defaulting to 5000 ms"
+			"prefetchTimeout manque à la configuration The Lounge, application du parmètre par défaut à 5000 ms"
 		);
 	}
 

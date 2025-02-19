@@ -14,7 +14,7 @@ export default <IrcEventHandler>function (irc, network) {
 	network.getLobby().pushMessage(
 		client,
 		new Msg({
-			text: "Network created, connecting to " + network.host + ":" + network.port + "...",
+			text: "Connecté au réseau " + network.host + ":" + network.port + "...",
 		}),
 		true
 	);
@@ -24,7 +24,7 @@ export default <IrcEventHandler>function (irc, network) {
 			network.getLobby().pushMessage(
 				client,
 				new Msg({
-					text: "Enabled capabilities: " + network.irc.network.cap.enabled.join(", "),
+					text: "Activation des capacités: " + network.irc.network.cap.enabled.join(", "),
 				}),
 				true
 			);
@@ -72,7 +72,7 @@ export default <IrcEventHandler>function (irc, network) {
 		network.getLobby().pushMessage(
 			client,
 			new Msg({
-				text: "Connected to the network.",
+				text: "Connecté au réseau.",
 			}),
 			true
 		);
@@ -84,7 +84,7 @@ export default <IrcEventHandler>function (irc, network) {
 		network.getLobby().pushMessage(
 			client,
 			new Msg({
-				text: "Disconnected from the network, and will not reconnect. Use /connect to reconnect again.",
+				text: "Déconnecté du réseau. Utilisez /connect pour se reconnecter.",
 			}),
 			true
 		);
@@ -118,7 +118,7 @@ export default <IrcEventHandler>function (irc, network) {
 				client,
 				new Msg({
 					type: MessageType.ERROR,
-					text: `Connection closed unexpectedly: ${String(error)}`,
+					text: `Connexion terminée de manière inattendue: ${String(error)}`,
 				}),
 				true
 			);
@@ -143,7 +143,7 @@ export default <IrcEventHandler>function (irc, network) {
 	if (Config.values.debug.ircFramework) {
 		irc.on("debug", function (message) {
 			log.debug(
-				`[${client.name} (${client.id}) on ${network.name} (${network.uuid}]`,
+				`[${client.name} (${client.id}) sur ${network.name} (${network.uuid}]`,
 				message
 			);
 		});
@@ -168,7 +168,7 @@ export default <IrcEventHandler>function (irc, network) {
 			client,
 			new Msg({
 				type: MessageType.ERROR,
-				text: "Socket error: " + err,
+				text: "Erreur socket: " + err,
 			}),
 			true
 		);
@@ -178,9 +178,9 @@ export default <IrcEventHandler>function (irc, network) {
 		network.getLobby().pushMessage(
 			client,
 			new Msg({
-				text: `Disconnected from the network. Reconnecting in ${Math.round(
+				text: `Déconnecté du réseau, reconnexion dans ${Math.round(
 					data.wait / 1000
-				)} seconds… (Attempt ${Number(data.attempt)})`,
+				)} secondes… (Tentative n°${Number(data.attempt)})`,
 			}),
 			true
 		);
@@ -190,7 +190,7 @@ export default <IrcEventHandler>function (irc, network) {
 		network.getLobby().pushMessage(
 			client,
 			new Msg({
-				text: "Ping timeout, disconnecting…",
+				text: "Délai d'attente expiré, déconnexion…",
 			}),
 			true
 		);

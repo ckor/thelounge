@@ -17,8 +17,8 @@
 				</button>
 			</div>
 			<template v-if="resolvedMessages.length === 0">
-				<p v-if="isLoading">Loading…</p>
-				<p v-else>You have no recent mentions.</p>
+				<p v-if="isLoading">Chargement…</p>
+				<p v-else>Vous n avez pas de mentions récentes.</p>
 			</template>
 			<template v-for="message in resolvedMessages" v-else :key="message.msgId">
 				<div :class="['msg', message.type]">
@@ -27,10 +27,10 @@
 							<span class="from">
 								<Username :user="(message.from as any)" />
 								<template v-if="message.channel">
-									in {{ message.channel.channel.name }} on
+									dans {{ message.channel.channel.name }} sur
 									{{ message.channel.network.name }}
 								</template>
-								<template v-else> in unknown channel </template> </span
+								<template v-else> dans un canal inconnu </template> </span
 							>{{ ` ` }}
 							<span :title="message.localetime" class="time">
 								{{ messageTime(message.time.toString()) }}
@@ -39,11 +39,11 @@
 						<div>
 							<span
 								class="close-tooltip tooltipped tooltipped-w"
-								aria-label="Dismiss this mention"
+								aria-label="éliminer cette mention"
 							>
 								<button
 									class="msg-dismiss"
-									aria-label="Dismiss this mention"
+									aria-label="éliminer cette mention"
 									@click="dismissMention(message)"
 								></button>
 							</span>

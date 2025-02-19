@@ -7,7 +7,7 @@
 				type="search"
 				name="search"
 				class="input"
-				placeholder="Search messages…"
+				placeholder="Recherche de messages…"
 				@blur="closeSearch"
 				@keyup.esc="closeSearch"
 			/>
@@ -16,7 +16,7 @@
 			v-if="!onSearchPage"
 			class="search"
 			type="button"
-			aria-label="Search messages in this channel"
+			aria-label="Recherche de messages dans ce canal"
 			@mousedown.prevent="toggleSearch"
 		/>
 	</form>

@@ -2,16 +2,16 @@
 	<span class="content">
 		<p>
 			<Username :user="{nick: message.whois.nick}" />
-			<span v-if="message.whois.whowas"> is offline, last information:</span>
+			<span v-if="message.whois.whowas"> est hors ligne, dernière information:</span>
 		</p>
 
 		<dl class="whois">
 			<template v-if="message.whois.account">
-				<dt>Logged in as:</dt>
+				<dt>Connecté en tant que:</dt>
 				<dd>{{ message.whois.account }}</dd>
 			</template>
 
-			<dt>Host mask:</dt>
+			<dt>Sous reseau:</dt>
 			<dd class="hostmask">
 				<ParsedMessage
 					:network="network"
@@ -20,7 +20,7 @@
 			</dd>
 
 			<template v-if="message.whois.actual_hostname">
-				<dt>Actual host:</dt>
+				<dt>Reseau:</dt>
 				<dd class="hostmask">
 					<a
 						:href="'https://ipinfo.io/' + message.whois.actual_ip"
@@ -35,22 +35,22 @@
 			</template>
 
 			<template v-if="message.whois.actual_username">
-				<dt>Actual username:</dt>
+				<dt>Identifiant:</dt>
 				<dd>{{ message.whois.actual_username }}</dd>
 			</template>
 
 			<template v-if="message.whois.real_name">
-				<dt>Real name:</dt>
+				<dt>Nom:</dt>
 				<dd><ParsedMessage :network="network" :text="message.whois.real_name" /></dd>
 			</template>
 
 			<template v-if="message.whois.registered_nick">
-				<dt>Registered nick:</dt>
+				<dt>Pseudo:</dt>
 				<dd>{{ message.whois.registered_nick }}</dd>
 			</template>
 
 			<template v-if="message.whois.channels">
-				<dt>Channels:</dt>
+				<dt>Canaux:</dt>
 				<dd><ParsedMessage :network="network" :text="message.whois.channels" /></dd>
 			</template>
 
@@ -67,51 +67,51 @@
 			</template>
 
 			<template v-if="message.whois.operator">
-				<dt>Operator:</dt>
+				<dt>Operateur:</dt>
 				<dd>{{ message.whois.operator }}</dd>
 			</template>
 
 			<template v-if="message.whois.helpop">
-				<dt>Available for help:</dt>
-				<dd>Yes</dd>
+				<dt>Disponible pour aider:</dt>
+				<dd>oui</dd>
 			</template>
 
 			<template v-if="message.whois.bot">
-				<dt>Is a bot:</dt>
-				<dd>Yes</dd>
+				<dt>Est un robot:</dt>
+				<dd>Oui</dd>
 			</template>
 
 			<template v-if="message.whois.away">
-				<dt>Away:</dt>
+				<dt>Absent:</dt>
 				<dd><ParsedMessage :network="network" :text="message.whois.away" /></dd>
 			</template>
 
 			<template v-if="message.whois.secure">
-				<dt>Secure connection:</dt>
-				<dd>Yes</dd>
+				<dt>Connexion sécurisée:</dt>
+				<dd>oui</dd>
 			</template>
 
 			<template v-if="message.whois.certfps">
 				<template v-for="certfp in message.whois.certfps" :key="certfp">
-					<dt>Certificate:</dt>
+					<dt>Certificat:</dt>
 					<dd>{{ certfp }}</dd>
 				</template>
 			</template>
 
 			<template v-if="message.whois.server">
-				<dt>Connected to:</dt>
+				<dt>Connecté sur:</dt>
 				<dd>
 					{{ message.whois.server }} <i>({{ message.whois.server_info }})</i>
 				</dd>
 			</template>
 
 			<template v-if="message.whois.logonTime">
-				<dt>Connected at:</dt>
+				<dt>Connecté à:</dt>
 				<dd>{{ localetime(message.whois.logonTime) }}</dd>
 			</template>
 
 			<template v-if="message.whois.idle">
-				<dt>Idle since:</dt>
+				<dt>Temps inactivité:</dt>
 				<dd>{{ localetime(message.whois.idleTime) }}</dd>
 			</template>
 		</dl>

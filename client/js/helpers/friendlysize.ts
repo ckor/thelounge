@@ -1,4 +1,4 @@
-const sizes = ["Bytes", "KiB", "MiB", "GiB", "TiB", "PiB"];
+const sizes = ["Octets", "Ko", "Mo", "Go", "To", "Po"];
 
 export default (size: number) => {
 	// Loosely inspired from https://stackoverflow.com/a/18650828/1935861

@@ -11,7 +11,7 @@ export default <IrcEventHandler>function (irc, network) {
 
 		const msg = new Msg({
 			type: MessageType.LOGIN,
-			text: "Logged in as: " + data.account,
+			text: "Connecté avec: " + data.account,
 		});
 		lobby.pushMessage(client, msg, true);
 	});
@@ -21,7 +21,7 @@ export default <IrcEventHandler>function (irc, network) {
 
 		const msg = new Msg({
 			type: MessageType.LOGOUT,
-			text: "Logged out",
+			text: "Déconnecté",
 		});
 		lobby.pushMessage(client, msg, true);
 	});
