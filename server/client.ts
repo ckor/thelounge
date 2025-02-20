@@ -195,15 +195,15 @@ class Client {
 		delete client.config.networks;
 
 		if (client.name) {
-			log.info(`${colors.bold("-------------------------------------------------------")}`);
-			log.info(`User ${colors.bold(client.name)} loaded`);
-			log.info(`${colors.bold("-------------------------------------------------------")}`);
-			log.info(`client.config : ${colors.bold(JSON.stringify(client.config))}`);
-			log.info(`${colors.bold("-------------------------------------------------------")}`);
-			log.info(`client.config.sessions : ${colors.bold(JSON.stringify(client.config.sessions))}`);
-			log.info(`${colors.bold("-------------------------------------------------------")}`);
-			log.info(`client.manager.clients : ${colors.bold(JSON.stringify(client.manager.clients))}`);
-			log.info(`${colors.bold("-------------------------------------------------------")}`);
+//			log.info(`${colors.bold("-------------------------------------------------------")}`);
+//			log.info(`User ${colors.bold(client.name)} loaded`);
+//			log.info(`${colors.bold("-------------------------------------------------------")}`);
+//			log.info(`client.config : ${colors.bold(JSON.stringify(client.config))}`);
+//			log.info(`${colors.bold("-------------------------------------------------------")}`);
+//			log.info(`client.config.sessions : ${colors.bold(JSON.stringify(client.config.sessions))}`);
+//			log.info(`${colors.bold("-------------------------------------------------------")}`);
+//			log.info(`client.manager.clients : ${colors.bold(JSON.stringify(client.manager.clients))}`);
+//			log.info(`${colors.bold("-------------------------------------------------------")}`);
 
 			// Networks are created instantly, but to reduce server load on startup
 			// We randomize the IRC connections and channel log loading
