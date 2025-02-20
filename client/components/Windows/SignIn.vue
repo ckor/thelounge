@@ -2,14 +2,14 @@
 	<div id="sign-in" class="window" role="tabpanel" aria-label="Sign-in">
 		<form class="container" method="post" action="" @submit="onSubmit">
 			<img
-				src="img/logo-vertical-transparent-bg.svg"
+				src="img/logo-logea.png"
 				class="logo"
 				alt="The Lounge"
 				width="256"
 				height="170"
 			/>
 			<img
-				src="img/logo-vertical-transparent-bg-inverted.svg"
+				src="img/logo_logea.png"
 				class="logo-inverted"
 				alt="The Lounge"
 				width="256"
