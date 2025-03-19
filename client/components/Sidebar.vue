@@ -3,13 +3,13 @@
 		<div class="scrollable-area">
 			<div class="logo-container">
 				<img
-					:src="`img/logo-${isPublic() ? 'horizontal-' : ''}-logea.png`"
+					:src="`img/logo-${isPublic() ? 'horizontal-' : ''}logea.png`"
 					class="logo"
 					alt="Chat LOGEA"
 					role="presentation"
 				/>
 				<img
-					:src="`img/logo_${isPublic() ? 'horizontal-' : ''}_logea.png`"
+					:src="`img/logo_${isPublic() ? 'horizontal_' : ''}logea.png`"
 					class="logo-inverted"
 					alt="Chat LOGEA"
 					role="presentation"

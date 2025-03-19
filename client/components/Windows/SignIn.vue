@@ -4,16 +4,14 @@
 			<img
 				src="img/logo-logea.png"
 				class="logo"
-				alt="The Lounge"
-				width="256"
-				height="170"
+				alt="LOGEA"
+				height="101"
 			/>
 			<img
 				src="img/logo_logea.png"
 				class="logo-inverted"
-				alt="The Lounge"
-				width="256"
-				height="170"
+				alt="LOGEA"
+				height="101"
 			/>
 
 			<label for="signin-username">Identifiant</label>
